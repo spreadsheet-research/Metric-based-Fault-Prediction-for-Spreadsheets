@@ -1,0 +1,1 @@
+This folder contains the raw evaluation data that is the result of the individual evaluation scripts.
