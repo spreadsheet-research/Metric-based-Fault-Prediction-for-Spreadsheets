@@ -23,21 +23,31 @@
 
     <section class="main-content">
       <h1> Datasets </h1>
+        <p>Datasets in raw form, as published by the datasets' original authors.</p>
+        <ul>
+          <li><a title="ZIP file for Enron Errors dataset" href="datasets/raw/enron-errors.zip">Enron Errors</a></li>
+          <li><a title="ZIP file for INFO1 dataset" href="datasets/raw/Info1.zip.zip">INFO1</a></li>
+          <li><a title="ZIP file for EUSES dataset" href="datasets/raw/EUSES_modified.zip">EUSES</a></li>
+        </ul>
       <h1> Evaluation </h1>
       <h1> Tool </h1>
       <h1> Appendix </h1>
       <p> Additional material, referred to within the original paper. </p>
       <h2> Plots </h2>
       <p> Full-sized plots for all experiments and datasets. </p>
-      <h3> Single-metric classifiers (Decision Trees, Logistic Regression models, and Threshold classifiers) evaluated on the three datasets (Enron Erros, Info1, Euses) </h3>
-      <p><img src="https://github.com/pwkoch/2018_Metric-based-Fault-Prediction-for-Spreadsheets/blob/master/appendix/plots/comparison_NIER.pdf" alt="Test" /></p>
-      <p><img src="https://github.com/pwkoch/2018_Metric-based-Fault-Prediction-for-Spreadsheets/blob/master/appendix/plots/single/singleMetric_decisionTree_ENRON.png" alt="png" /></p>
-      <p><img src="https://raw.githubusercontent.com/pwkoch/2018_Metric-based-Fault-Prediction-for-Spreadsheets/master/appendix/plots/single/singleMetric_decisionTree_ENRON.png" alt="png2" /></p>
-      <p><img src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/prod/aab5d721f26b514aaa4911b57358f74f7bb56e9b/image/elsevier-non-solus.png" alt="external" /></p>
-      <p><img src="../appendix/plots/single/singleMetric_decisionTree_ENRON.png" alt="relative_1" /></p>
-      <p><img src="appendix/plots/single/singleMetric_decisionTree_ENRON.png" alt="relative_2" /></p>
-      <p><img src="appendix/plots/comparison_NIER.pdf" alt="relative_3" /></p>
-      
+      <h3> Single-metric classifiers </h3>
+      <p>Models (Decision Trees, Logistic Regression models, and Threshold classifiers) trained using only one feature and evaluated on the three datasets (Enron Erros, Info1, Euses) </h3>
+      <p><img src="appendix/plots/single/singleMetric_decisionTree_ENRON.png" alt="decision tree ENRON" /></p>
+      <p><img src="appendix/plots/single/singleMetric_decisionTree_INFO1.png" alt="decision tree INFO1" /></p>
+      <p><img src="appendix/plots/single/singleMetric_decisionTree_EUSES.png" alt="decision tree EUSES" /></p>
+      <p><img src="appendix/plots/single/singleMetric_logReg_ENRON.png" alt="logistic regression ENRON" /></p>
+      <p><img src="appendix/plots/single/singleMetric_logReg_INFO1.png" alt="logistic regression INFO1" /></p>
+      <p><img src="appendix/plots/single/singleMetric_logReg_EUSES.png" alt="logistic regression EUSES" /></p>
+      <p><img src="appendix/plots/single/singleMetric_threshold_ENRON.png" alt="threshold classifier ENRON" /></p>
+      <p><img src="appendix/plots/single/singleMetric_threshold_INFO1.png" alt="threshold classifier INFO1" /></p>
+      <p><img src="appendix/plots/single/singleMetric_threshold_EUSES.png" alt="threshold classifier EUSES" /></p>
+    
+    
       <footer class="site-footer">
         {% if site.github.is_project_page %}
           <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
