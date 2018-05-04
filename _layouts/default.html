@@ -22,7 +22,15 @@
     </section>
 
     <section class="main-content">
-      <h1> Datasets </h1>
+      <p> Additional resources include:</p>
+      <ul>
+        <li><a href="#datasets">Datasets</a> in raw and filtered forms</li>
+        <li><a href="#evaluaiton">Evaluation</a> framework, scripts, and results</li>
+        <li><a href="#tool">Tool</a> download and description</li>
+        <li><a href="#appendix">Appendix</a> providing high-resultion plots</li>
+      </ul>  
+      
+      <h1 id="datasets"> Datasets </h1>
         <p>Datasets in raw form, as published by the datasets' original authors.</p>
         <ul>
           <li><a title="ZIP file for Enron Errors dataset" href="datasets/raw/enron-errors.zip">Enron Errors</a></li>
@@ -36,22 +44,26 @@
           <li><a title="ZIP file for EUSES dataset" href="datasets/used_for_evaluation/EUSES_mutated.zip">EUSES</a></li>
         </ul>
       
-      <h1> Evaluation </h1> 
+      <h1 id="evaluation"> Evaluation </h1> 
         <p>The <a title="ZIP file containing the python framework" href="evaluation/framework/framwork.zip">python framework</a> contains the basic functionality that is used by the individual evaluation scripts to import and export data, as well as initialize and employ the machine-learning functionalities of the scikit-learn framework.</p>
         <p>The <a title="ZIP file containing the evaluation scripts" href="evaluation/framework/scripts.zip">evaluation scripts</a> encode the individual experiments that were run on the evaluation server.</p>
         <p>The <a title="ZIP file containing the evaluation results" href="evaluation/results/results.zip">evaluation results</a> contain the results of individual experiments, encoded in csv, txt, and json file formats.</p>
       
-      <h1> Tool </h1>
+      <h1 id="tool"> Tool </h1>
         <p><a title="Executable .jar file of Fritz evaluation tool" href="tool/fritz.jar">Fritz</a> is an executable jar file of the tool that was used to compute the metric values for each of the input datasets.
            Additional Information regarding the requirements, functionalities, and usage of Fritz is available at the <a title="Web page of Fritz tool" href="http://spreadsheets.ist.tugraz.at/index.php/software/fritz/">tool web page</a></p>      
       
-      <h1> Appendix </h1>
+      <h1 id="appendix"> Appendix </h1>
       <p> Additional material, referred to within the original paper, categorized into </p>
       
       
       <h2> Plots </h2>
-      <p> Full-sized plots for all experiments and datasets. </p>
-      <h2> Single-metric classifiers </h3>
+      <p> Full-sized plots for all experiments and datasets. Plots are available for the categories:</p>
+      <ul>
+        <li><a href="#plots_singleMetric">Single-metric classifiers</a></li>
+      </ul>     
+      
+      <h3 id="plots_singleMetric"> Single-metric classifiers </h3>
       <p>Models (Decision Trees, Logistic Regression models, and Threshold classifiers) trained using only one feature and evaluated on the three datasets (Enron Erros, Info1, Euses) </h3>
       <p><img src="appendix/plots/single/singleMetric_decisionTree_ENRON.png" alt="decision tree ENRON" /></p>
       <p><img src="appendix/plots/single/singleMetric_decisionTree_INFO1.png" alt="decision tree INFO1" /></p>
