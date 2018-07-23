@@ -1,0 +1,1 @@
+This python framework contains the basic functionality that is used by the individual evaluation scripts to import and export data, as well as initialize and employ the machine-learning functionalities of the scikit-learn framework.
