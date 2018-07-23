@@ -1,0 +1,2 @@
+Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.
+MLPClassifier;MLPClassifier;ENRON;0,9437;0,0349;0,9488;0,0309

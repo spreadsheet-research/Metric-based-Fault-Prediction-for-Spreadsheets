@@ -1,0 +1,2 @@
+Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.
+SGDClassifier;SGDClassifier;EUSES;0,01;0,00;0,87;0,04
