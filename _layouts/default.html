@@ -50,7 +50,7 @@
           <li><a title="CSV file for EUSES dataset" href="datasets/measured/euses.csv">EUSES</a></li>
         </ul>
       <h1 id="evaluation"> Evaluation </h1> 
-        <p>The <a title="ZIP file containing the python framework" href="evaluation/lib/lib.zip">python framework</a> contains the basic functionality that is used by the individual evaluation scripts to import and export data, as well as initialize and employ the machine-learning functionalities of the scikit-learn framework.</p>
+        <p>The <a title="ZIP file containing the Python framework" href="evaluation/lib/lib.zip">Python framework</a> contains the basic functionality that is used by the individual evaluation scripts to import and export data, as well as initialize and employ the machine-learning functionalities of the scikit-learn framework.</p>
         <p>The <a title="ZIP file containing the evaluation scripts" href="evaluation/scripts/scripts.zip">evaluation scripts</a> encode the individual experiments that were run on the evaluation server.</p>
         <p>The <a title="ZIP file containing the evaluation results" href="evaluation/results/results.zip">evaluation results</a> contain the results of individual experiments, encoded in csv, txt, and json file formats.</p>
       
@@ -66,7 +66,7 @@
           <li><a href="#plots_ensemble">Study 2: Ensemble classifiers</a></li>
         </ul>     
       
-        <h2 id="plots_singleMetric">Study 1: Single-metric classifiers </h2>
+        <h2 id="plots_singleMetric">Study 1: Invidvidual metric classifiers </h2>
           <p>Models trained using only one feature and evaluated on the three datasets (Enron Erros, Info1, Euses) </h3>
           <h3>  Decision Trees </h3>
             <p><img src="appendix/plots/single/singleMetric_decisionTree_ENRON.png" alt="decision tree ENRON" /></p>
@@ -81,8 +81,8 @@
             <p><img src="appendix/plots/single/singleMetric_threshold_INFO1.png" alt="threshold classifier INFO1" /></p>
             <p><img src="appendix/plots/single/singleMetric_threshold_EUSES.png" alt="threshold classifier EUSES" /></p>
     
-        <h2 id="plots_ensemble">Study 2: Ensemble classifiers</h2>
-          <p>Ensemble models trained and evaluated on the three datasets (Enron Erros, Info1, Euses) </h3>
+        <h2 id="plots_ensemble">Study 2: Fault prediction with multiple metrics</h2>
+          <p>ML models that use all metrics of the catalog trained and evaluated on the three datasets (Enron Erros, Info1, Euses) </h3>
           <h3>  Precision / Recall / F1 plots </h3>
             <p>Visual comparison of average prediction results measured in precision/recall/F1-score </h3>
             <p><img src="appendix/plots/ensemble/ensemble_ENRON.png" alt="ensemble ENRON" /></p>
@@ -93,9 +93,6 @@
             <p><img src="appendix/plots/boxplots/boxplot_ENRON.png" alt="boxplot ENRON" /></p>
             <p><img src="appendix/plots/boxplots/boxplot_INFO1.png" alt="boxplot INFO1" /></p>
             <p><img src="appendix/plots/boxplots/boxplot_EUSES.png" alt="boxplots EUSES" /></p>
-          <h3>  Comparison with previous work (NIER) </h3>
-            <p> Comparison of different ensemble models when trained using features of either the current metric catalog, or of previous work (NIER) using the Enron Errors dataset.</h3>
-            <p><img src="appendix/plots/ensemble/comparison_NIER.png" alt="ensemble ENRON" /></p>
 
       <footer class="site-footer">
         {% if site.github.is_project_page %}
