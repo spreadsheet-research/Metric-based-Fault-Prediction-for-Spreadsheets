@@ -16,8 +16,7 @@ def _fmeasureCurve(f, p):
     (recall (y) over precision (x)), for a given fixed f value we get this
     function by solving for r:
     """
-    return f * p / (2 * p - f)
-
+    return 0 if 2 * p == f else f * p / (2 * p - f)
 
 def _plotFMeasures(fstepsize=.1, stepsize=0.001, figSize='normal'):
     """Plots 10 fmeasure Curves into the current canvas."""
