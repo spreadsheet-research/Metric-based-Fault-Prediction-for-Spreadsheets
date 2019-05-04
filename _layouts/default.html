@@ -100,14 +100,19 @@
           <h3>  Precision / Recall / F1 plots </h3>
             <p>Visual comparison of average prediction results measured in precision/recall/F1-score </p>
             <p><img src="appendix/plots/transferLearning/oneSource.png" alt="transfer learning results of RF classifiers trained on one dataset" /></p>
-            <p><img src="appendix/plots/transferLearning/twoSources.png" alt="transfer learning results of RF classifiers trained on combinations of two datasets" /></p>
-            <p><img src="appendix/plots/transferLearning/threeSources.png" alt="transfer learning results of RF classifiers trained on a combination of three datasets" /></p>
+            <p><img src="appendix/plots/transferLearning/threeSourcesCV.png" alt="transfer learning results of RF classifiers trained on a combination of three datasets" /></p>
 
         <h2 id="plots_featureImportance">AD Study 3: Feature Importance for Random Forest classifiers</h2>
-          <p>Random Forest classifiers provide a ranking of features that are the most important for decisionmaking. We compared the results of RF classifiers that were trained using the 5 most important features for each dataset only, and compared it to previous results. </h3>
+          <p>Random Forest classifiers provide a ranking of features that are the most important for decisionmaking. We compared the results of RF classifiers that were trained using either the 5 or 10 most important features for each dataset only, and compared it to previous results. </h3>
           <h3>  Precision / Recall / F1 plots </h3>
             <p>Visual comparison of average prediction results measured in precision/recall/F1-score </h3>
             <p><img src="appendix/plots/limitedFeatures/comparision.png" alt="results of RF classifiers trained using only the 5 most important features" /></p>
+
+        <h2 id="plots_datasetCombination">Dataset Combination</h2>
+          <p>Prediction performance of a learned classifier highly depends on the qulity and consistency of the utilized dataset. In the main studies of our work, we used our available datasets (Enron Errors, Info1, Euses) in separation. In this study, we hence evaluate the combinability of those datasets by evaluating different combination using a trained Random Forest classifier. </p>
+          <h3>  Precision / Recall / F1 plots </h3>
+            <p>Visual comparison of average prediction results measured in precision/recall/F1-score </p>
+            <p><img src="appendix/plots/datasetCombination/comparision.png" alt="evaluation results of RF classifiers trained using combinations of the different datasets" /></p>
 
       <footer class="site-footer">
         {% if site.github.is_project_page %}
