@@ -1,0 +1,10 @@
+Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.;features
+RandomForestClassifier;RandomForestClassifier;ENRON;0,9748;0,0219;0,9597;0,0266;5
+RandomForestClassifier;RandomForestClassifier;ENRON;0,9662;0,0266;0,9607;0,0285;10
+RandomForestClassifier;RandomForestClassifier;ENRON;0,99;0,01;0,96;0,03;all
+RandomForestClassifier;RandomForestClassifier;INFO1;0,4781;0,0129;0,6839;0,0219;5
+RandomForestClassifier;RandomForestClassifier;INFO1;0,6424;0,0151;0,7873;0,0183;10
+RandomForestClassifier;RandomForestClassifier;INFO1;0,74;0,01;0,81;0,02;all
+RandomForestClassifier;RandomForestClassifier;EUSES;0,4989;0,0636;0,3;0,0486;5
+RandomForestClassifier;RandomForestClassifier;EUSES;0,7781;0,0652;0,421;0,0589;10
+RandomForestClassifier;RandomForestClassifier;EUSES;0,87;0,05;0,47;0,06;all
