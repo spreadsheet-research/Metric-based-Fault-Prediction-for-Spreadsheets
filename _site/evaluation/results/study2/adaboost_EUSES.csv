@@ -1,0 +1,2 @@
+Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.
+AdaBoostClassifier;AdaBoostClassifier;EUSES;0,71;0,07;0,47;0,06

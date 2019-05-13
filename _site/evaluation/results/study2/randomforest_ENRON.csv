@@ -1,0 +1,2 @@
+Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.
+RandomForestClassifier;RandomForestClassifier;ENRON;0,99;0,01;0,96;0,03

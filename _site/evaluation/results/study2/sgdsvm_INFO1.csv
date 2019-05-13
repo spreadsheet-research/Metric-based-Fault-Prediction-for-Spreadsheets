@@ -1,0 +1,2 @@
+Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.
+SGDClassifier;SGDClassifier;INFO1;0,11;0,01;0,89;0,04

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>2018_Metric-based-Fault-Prediction-for-Spreadsheets | Metric-based Fault Prediction for Spreadsheets</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="2018_Metric-based-Fault-Prediction-for-Spreadsheets" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal." />
+<meta property="og:description" content="Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Metric-based Fault Prediction for Spreadsheets" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/","description":"Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal.","name":"Metric-based Fault Prediction for Spreadsheets","headline":"2018_Metric-based-Fault-Prediction-for-Spreadsheets","@type":"WebSite","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="/assets/css/style.css?v=8cab8c6b6930f659be225e271023300d4d19814f">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Metric-based Fault Prediction for Spreadsheets</h1>
+      <h2 class="project-tagline">Resources related to the paper "Metric-based Fault Prediction for Spreadsheets" submitted to the "IEEE Transactions on Software Engineering" journal.</h2>
+      
+        <a href="https://github.com/pwkoch/2018_Metric-based-Fault-Prediction-for-Spreadsheets" class="btn">View on GitHub</a>
+      
+      
+    </section>
+
+    <section class="main-content">
+      <p> Additional resources include:</p>
+      <ul>
+        <li><a href="#datasets">Datasets</a> in raw and filtered forms</li>
+        <li><a href="#evaluation">Evaluation</a> framework, scripts, and results</li>
+        <li><a href="#tool">Tool</a> download and description</li>
+        <li><a href="#appendix">Appendix</a> providing high-resoultion plots and additional information</li>
+      </ul>
+
+      <h1 id="datasets"> Datasets </h1>
+        <p>Spreadsheet corpora in raw form, as originally published.</p>
+        <ul>
+          <li><a title="ZIP file for Enron Errors dataset" href="datasets/raw/enron-errors.zip">Enron Errors</a></li>
+          <li><a title="ZIP file for INFO1 dataset" href="datasets/raw/Info1.zip">INFO1</a></li>
+          <li><a title="ZIP file for EUSES dataset" href="datasets/raw/EUSES_modified.zip">EUSES</a></li>
+        </ul>
+        <p>Spreadsheet corpora as used for the studies described in our work.</p>
+        <ul>
+          <li><a title="ZIP file for Enron Errors dataset" href="datasets/used_for_evaluation/EENRON.zip">Enron Errors</a></li>
+          <li><a title="ZIP file for INFO1 dataset" href="datasets/used_for_evaluation/Info1.zip">INFO1</a></li>
+          <li><a title="ZIP file for EUSES dataset" href="datasets/used_for_evaluation/EUSES_mutated.zip">EUSES</a></li>
+        </ul>
+        <p>Tables that contain metric measurements and fault information.</p>
+        <ul>
+          <li><a title="CSV file for Enron Errors dataset" href="datasets/measured/enron.csv">Enron Errors</a></li>
+          <li><a title="CSV file for INFO1 dataset" href="datasets/measured/info1.csv">INFO1</a></li>
+          <li><a title="CSV file for EUSES dataset" href="datasets/measured/euses.csv">EUSES</a></li>
+        </ul>
+      <h1 id="evaluation"> Evaluation </h1>
+        <p>The <a title="ZIP file containing the Python framework" href="evaluation/lib/lib.zip">Python framework</a> contains the basic functionality that is used by the individual evaluation scripts to import and export data, as well as initialize and employ the machine-learning functionalities of the <a title="Web page of scikit-learn framework" href="http://scikit-learn.org/">scikit-learn</a> framework.</p>
+        <p>The <a title="ZIP file containing the evaluation scripts" href="evaluation/scripts/scripts.zip">evaluation scripts</a> encode the individual experiments that were run on the evaluation server.</p>
+        <p>The <a title="ZIP file containing the evaluation results" href="evaluation/results/results.zip">evaluation results</a> contain the results of individual experiments, encoded in csv, txt, and json file formats.</p>
+
+      <h1 id="tool"> Tool </h1>
+        <p><a title="Executable .jar file of Fritz evaluation tool" href="tool/fritz.jar">Fritz</a> is an executable jar file of the tool that was used to compute the metric values for each of the input datasets.
+           Additional Information regarding the requirements, functionalities, and usage of Fritz is available at the <a title="Web page of Fritz tool" href="http://spreadsheets.ist.tugraz.at/index.php/software/fritz/">tool web page</a></p>
+
+      <h1 id="appendix"> Appendix </h1>
+        <p> Additional material, referred to within the original paper. </p>
+        <p> Full-sized plots and descriptions are available for the following topics:</p>
+        <ul>
+          <li><a href="study1.html">Study 1: Individual metrics as fault predictors</a></li>
+          <li><a href="study2.html">Study 2: Fault prediction with multiple metrics</a></li>
+        </ul>
+        <p> A <a title="Pdf appendix" href="appendix/appendix.pdf">pdf appendix</a> provides additinal information and explanations for studies one and two.</p>
+
+        <h2 id="plots_ensemble">Study 2: Fault prediction with multiple metrics</h2>
+          <p>ML models that use all metrics of the catalog trained and evaluated on the three datasets (Enron Erros, Info1, Euses) </p>
+          <h3>  Precision / Recall / F1 plots </h3>
+            <p>Visual comparison of average prediction results measured in precision/recall/F1-score </h3>
+            <p><img src="appendix/plots/ensemble/ensemble_ENRON.png" alt="ensemble ENRON" /></p>
+            <p><img src="appendix/plots/ensemble/ensemble_INFO1.png" alt="ensemble INFO1" /></p>
+            <p><img src="appendix/plots/ensemble/ensemble_EUSES.png" alt="ensemble EUSES" /></p>
+          <h3>  Boxplots </h3>
+            <p>Distribution of measured F1 results of different models on the three datasets in order: Enron Errors, INFO1, and EUSES.</p>
+            <p><img src="appendix/plots/boxplots/boxplot_ENRON.png" alt="boxplot ENRON" /></p>
+            <p><img src="appendix/plots/boxplots/boxplot_INFO1.png" alt="boxplot INFO1" /></p>
+            <p><img src="appendix/plots/boxplots/boxplot_EUSES.png" alt="boxplots EUSES" /></p>
+
+        <h2 id="plots_transfer">Transfer Learning</h2>
+          <p>Random Forest that use all metrics of the catalog, trained on either individual datasets or combinations of datasets, and evaluated on either one dataset (Enron Erros (EN), Info1(IN), Euses(EU)) </p>
+          <h3>  Precision / Recall / F1 plots </h3>
+            <p>Visual comparison of average prediction results measured in precision/recall/F1-score </p>
+            <p><img src="appendix/plots/transferLearning/oneSource.png" alt="transfer learning results of RF classifiers trained on one dataset" /><a title="(Data CSV))" href="appendix/data/transferLearning/oneSource.csv">Data CSV</a></p>
+            <p><img src="appendix/plots/transferLearning/threeSourcesCV.png" alt="transfer learning results of RF classifiers trained on a combination of three datasets" /><a title="(Data CSV))" href="appendix/data/transferLearning/threeSourcesCV.csv">Data CSV</a></p>
+
+        <h2 id="plots_featureImportance">AD Study 3: Feature Importance for Random Forest classifiers</h2>
+          <p>Random Forest classifiers provide a ranking of features that are the most important for decisionmaking. We compared the results of RF classifiers that were trained using either the 5 or 10 most important features for each dataset only, and compared it to previous results. </h3>
+          <h3>  Precision / Recall / F1 plots </h3>
+            <p>Visual comparison of average prediction results measured in precision/recall/F1-score </h3>
+            <p><img src="appendix/plots/limitedFeatures/comparision.png" alt="results of RF classifiers trained using only the 5 most important features" /><a title="(Data CSV))" href="appendix/data/limitedFeatures/comparision.csv">Data CSV</a></p>
+
+        <h2 id="plots_datasetCombination">Dataset Combination</h2>
+          <p>Prediction performance of a learned classifier highly depends on the qulity and consistency of the utilized dataset. In the main studies of our work, we used our available datasets (Enron Errors, Info1, Euses) in separation. In this study, we hence evaluate the combinability of those datasets by evaluating different combination using a trained Random Forest classifier. </p>
+          <h3>  Precision / Recall / F1 plots </h3>
+            <p>Visual comparison of average prediction results measured in precision/recall/F1-score </p>
+            <p><img src="appendix/plots/datasetCombination/comparison.png" alt="evaluation results of RF classifiers trained using combinations of the different datasets" /><a title="(Data CSV))" href="appendix/data/datasetCombination/comparison.csv">Data CSV</a></p>
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/pwkoch/2018_Metric-based-Fault-Prediction-for-Spreadsheets">2018_Metric-based-Fault-Prediction-for-Spreadsheets</a> is maintained by <a href="https://github.com/pwkoch">pwkoch</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </section>
+
+    
+  </body>
+</html>

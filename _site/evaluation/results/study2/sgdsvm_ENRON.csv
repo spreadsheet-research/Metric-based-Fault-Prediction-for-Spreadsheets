@@ -1,0 +1,2 @@
+Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.
+SGDClassifier;SGDClassifier;ENRON;0,21;0,02;0,96;0,03
