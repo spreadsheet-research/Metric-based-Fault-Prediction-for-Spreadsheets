@@ -4,45 +4,67 @@
     <meta charset="UTF-8">
 
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Study 1 - Individual metrics as fault predictors | Metric-based Fault Prediction for Spreadsheets</title>
+<title>Study 1 | Metric-based Fault Prediction for Spreadsheets</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Study 1 - Individual metrics as fault predictors" />
+<meta property="og:title" content="Study 1" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal." />
-<meta property="og:description" content="Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal." />
+<meta name="description" content="Study 1 - Individual metrics as fault predictors" />
+<meta property="og:description" content="Study 1 - Individual metrics as fault predictors" />
 <link rel="canonical" href="http://localhost:4000/study1.html" />
 <meta property="og:url" content="http://localhost:4000/study1.html" />
 <meta property="og:site_name" content="Metric-based Fault Prediction for Spreadsheets" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/study1.html","description":"Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal.","headline":"Study 1 - Individual metrics as fault predictors","@type":"WebPage","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/study1.html","headline":"Study 1","description":"Study 1 - Individual metrics as fault predictors","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
-    <link rel="stylesheet" href="/assets/css/style.css?v=8cab8c6b6930f659be225e271023300d4d19814f">
-    <title>Study 1 - Individual metrics as fault predictors</title>
+    <link rel="stylesheet" href="/assets/css/style.css?v=6d379d72f7608be83934133fc1f439e86efc672b">
+    <title>Study 1</title>
   </head>
 
-
   <body>
-    
-    <h1>Study 1: Individual metrics as fault predictors</h1>
-<p>Models trained using only one feature and evaluated on the three datasets (Enron Erros, Info1, Euses) </p>
-<h2>  Decision Trees </h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;&lt;img src="appendix/plots/single/singleMetric_decisionTree_ENRON.png" alt="decision tree ENRON" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="appendix/plots/single/singleMetric_decisionTree_INFO1.png" alt="decision tree INFO1" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="appendix/plots/single/singleMetric_decisionTree_EUSES.png" alt="decision tree EUSES" /&gt;&lt;/p&gt;
-</code></pre></div></div>
-<h2>  Logistic Regression models </h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;&lt;img src="appendix/plots/single/singleMetric_logReg_ENRON.png" alt="logistic regression ENRON" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="appendix/plots/single/singleMetric_logReg_INFO1.png" alt="logistic regression INFO1" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="appendix/plots/single/singleMetric_logReg_EUSES.png" alt="logistic regression EUSES" /&gt;&lt;/p&gt;
-</code></pre></div></div>
-<h2>  Threshold classifiers</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;&lt;img src="appendix/plots/single/singleMetric_threshold_ENRON.png" alt="threshold classifier ENRON" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="appendix/plots/single/singleMetric_threshold_INFO1.png" alt="threshold classifier INFO1" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="appendix/plots/single/singleMetric_threshold_EUSES.png" alt="threshold classifier EUSES" /&gt;&lt;/p&gt;
-</code></pre></div></div>
+    <section class="page-header">
+      <h1 class="project-name">Metric-based Fault Prediction for Spreadsheets</h1>
+      <h2 class="project-tagline">Study 1 - Individual metrics as fault predictors</h2>
+      <a href="index.html" class="btn">Back to Project Page</a>
+    </section>
+    <section class="main-content" style="text-align: justify">
+      <h1>Description</h1>
+  <p>
+    In Study 1, we evaluate the performance of individual metrics when used to train certain ML model types to predict faulty spreadsheet cells.
+    On this page, we provide high-resulution plots that show these results for each of the three different classifier types (Decision Tree, Logistic Regression, Threshold Classifier) trained and evaluated on each of our datasets (Enron Errors, Info1, Euses).
+  </p>
+<h1>Plot Type</h1>
+  <p>
+    To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and f1-performance for a specific evaluated model.
+    The evaluation result of each trained model is illustrated by a symbol in the plot area.
+    For any given symbol in the plot, its horizontal position corresponds to the precision score of the evaluated model.
+    Likewise, its vertical precision corresponds to the Recall score of the evaluated model.
+    Lastly, the symbol's position in relation to radial lines indicate the model's achieved F1 measure.
+  </p>
+  <p>
+    The numbers in the legend correspond to the indices given in our metric catalog.
+    Hexagons represent classifiers using metrics computed per cell, triangles represent formula cell-based metrics, inverted triangles are formula metrics, and bars indicate worksheet-based metrics.
+  </p>
 
+<h1>Plots</h1>
+  <p>
+    Plots are organized into groups based on the used ML model (Decision Tree, Logistic Regression, Threshold) and on which dataset the respective model was trained and evaluated on.
+  </p>
+  <h2>  Decision Trees </h2>
+    <p><img src="appendix/plots/single/singleMetric_decisionTree_ENRON.png" alt="decision tree ENRON" /></p>
+    <p><img src="appendix/plots/single/singleMetric_decisionTree_INFO1.png" alt="decision tree INFO1" /></p>
+    <p><img src="appendix/plots/single/singleMetric_decisionTree_EUSES.png" alt="decision tree EUSES" /></p>
+  <h2>  Logistic Regression models </h2>
+    <p><img src="appendix/plots/single/singleMetric_logReg_ENRON.png" alt="logistic regression ENRON" /></p>
+    <p><img src="appendix/plots/single/singleMetric_logReg_INFO1.png" alt="logistic regression INFO1" /></p>
+    <p><img src="appendix/plots/single/singleMetric_logReg_EUSES.png" alt="logistic regression EUSES" /></p>
+  <h2>  Threshold classifiers</h2>
+    <p><img src="appendix/plots/single/singleMetric_threshold_ENRON.png" alt="threshold classifier ENRON" /></p>
+    <p><img src="appendix/plots/single/singleMetric_threshold_INFO1.png" alt="threshold classifier INFO1" /></p>
+    <p><img src="appendix/plots/single/singleMetric_threshold_EUSES.png" alt="threshold classifier EUSES" /></p>
+
+    </section>
   </body>
 </html>

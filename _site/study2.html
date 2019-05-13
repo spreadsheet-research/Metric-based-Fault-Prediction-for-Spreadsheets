@@ -4,42 +4,73 @@
     <meta charset="UTF-8">
 
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Study 2 - Individual metrics as fault predictors | Metric-based Fault Prediction for Spreadsheets</title>
+<title>Study 2 | Metric-based Fault Prediction for Spreadsheets</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Study 2 - Individual metrics as fault predictors" />
+<meta property="og:title" content="Study 2" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal." />
-<meta property="og:description" content="Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal." />
+<meta name="description" content="Study 2 - Fault prediction with multiple metrics" />
+<meta property="og:description" content="Study 2 - Fault prediction with multiple metrics" />
 <link rel="canonical" href="http://localhost:4000/study2.html" />
 <meta property="og:url" content="http://localhost:4000/study2.html" />
 <meta property="og:site_name" content="Metric-based Fault Prediction for Spreadsheets" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/study2.html","description":"Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal.","headline":"Study 2 - Individual metrics as fault predictors","@type":"WebPage","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/study2.html","headline":"Study 2","description":"Study 2 - Fault prediction with multiple metrics","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
-    <link rel="stylesheet" href="/assets/css/style.css?v=8cab8c6b6930f659be225e271023300d4d19814f">
-    <title>Study 2 - Individual metrics as fault predictors</title>
+    <link rel="stylesheet" href="/assets/css/style.css?v=6d379d72f7608be83934133fc1f439e86efc672b">
+    <title>Study 2</title>
   </head>
 
-
   <body>
-    
-    <h2>Study 2: Fault prediction with multiple metrics</h2>
-<p>ML models that use all metrics of the catalog trained and evaluated on the three datasets (Enron Erros, Info1, Euses) </p>
-<h3>  Precision / Recall / F1 plots </h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;Visual comparison of average prediction results measured in precision/recall/F1-score &lt;/h3&gt;
-&lt;p&gt;&lt;img src="appendix/plots/ensemble/ensemble_ENRON.png" alt="ensemble ENRON" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="appendix/plots/ensemble/ensemble_INFO1.png" alt="ensemble INFO1" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="appendix/plots/ensemble/ensemble_EUSES.png" alt="ensemble EUSES" /&gt;&lt;/p&gt;
-</code></pre></div></div>
-<h3>  Boxplots </h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;Distribution of measured F1 results of different models on the three datasets in order: Enron Errors, INFO1, and EUSES.&lt;/p&gt;
-&lt;p&gt;&lt;img src="appendix/plots/boxplots/boxplot_ENRON.png" alt="boxplot ENRON" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="appendix/plots/boxplots/boxplot_INFO1.png" alt="boxplot INFO1" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="appendix/plots/boxplots/boxplot_EUSES.png" alt="boxplots EUSES" /&gt;&lt;/p&gt;
-</code></pre></div></div>
+    <section class="page-header">
+      <h1 class="project-name">Metric-based Fault Prediction for Spreadsheets</h1>
+      <h2 class="project-tagline">Study 2 - Fault prediction with multiple metrics</h2>
+      <a href="index.html" class="btn">Back to Project Page</a>
+    </section>
+    <section class="main-content" style="text-align: justify">
+      <h1>Description</h1>
+  <p>
+    In Study 2, we evaluate the performance of metric combinations when used to train certain ensemble ML model types to predict faulty spreadsheet cells.
+    On this page, we provide high-resulution plots that show these results for the different classifier types evaluated on each of the three datasets (Enron Errors, Info1, Euses).
+    In addition, we provide boxplots for all datasets, that give another perspective on individual learned models's performances during the cross-validation procedure.
+  </p>
+<h1>Plot Types</h1>
+  <p>
+    To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and f1-performance for a specific evaluated model.
+    The evaluation result of each trained model is illustrated by a symbol in the plot area.
+    For any given symbol in the plot, its horizontal position corresponds to the precision score of the evaluated model.
+    Likewise, its vertical precision corresponds to the Recall score of the evaluated model.
+    Lastly, the symbol's position in relation to radial lines indicate the model's achieved F1 measure.
+  </p>
+  <p>
+    <b>Boxplots</b> provide distribution information of the f1-values measured of each individual evaluation during the cross-validation scheme for each learner.
+    For these plots, RF stands for Random Forest, and AB For AdaBoost.
+  </p>
 
+<h1>Plots</h1>
+  <p>
+    Plots are organized into groups based on the employed plot type, first showing Precision / Recall / F1, and then Boxplots of the evaluation.
+  </p>
+  <h2>  Precision / Recall / F1 plots </h2>
+    <p><img src="appendix/plots/ensemble/ensemble_ENRON.png" alt="ensemble ENRON" /></p>
+    <p><img src="appendix/plots/ensemble/ensemble_INFO1.png" alt="ensemble INFO1" /></p>
+    <p><img src="appendix/plots/ensemble/ensemble_EUSES.png" alt="ensemble EUSES" /></p>
+  <h2> Boxplots </h2>
+    <p>
+      <figcaption>Enron Errors</figcaption>
+      <img src="appendix/plots/boxplots/boxplot_ENRON.png" alt="boxplot ENRON" />
+    </p>
+    <p>
+      <figcaption>Info1</figcaption>
+      <img src="appendix/plots/boxplots/boxplot_INFO1.png" alt="boxplot INFO1" />
+    </p>
+    <p>
+      <figcaption>Euses</figcaption>
+      <img src="appendix/plots/boxplots/boxplot_EUSES.png" alt="boxplots EUSES" />
+    </p>
+
+    </section>
   </body>
 </html>

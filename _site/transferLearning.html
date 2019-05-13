@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Transfer learning | Metric-based Fault Prediction for Spreadsheets</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Transfer learning" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Transfer learning" />
+<meta property="og:description" content="Transfer learning" />
+<link rel="canonical" href="http://localhost:4000/transferLearning.html" />
+<meta property="og:url" content="http://localhost:4000/transferLearning.html" />
+<meta property="og:site_name" content="Metric-based Fault Prediction for Spreadsheets" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/transferLearning.html","headline":"Transfer learning","description":"Transfer learning","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="/assets/css/style.css?v=6d379d72f7608be83934133fc1f439e86efc672b">
+    <title>Transfer learning</title>
+  </head>
+
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Metric-based Fault Prediction for Spreadsheets</h1>
+      <h2 class="project-tagline">Transfer learning</h2>
+      <a href="index.html" class="btn">Back to Project Page</a>
+    </section>
+    <section class="main-content" style="text-align: justify">
+      <h1>Description</h1>
+  <p>
+    In addition to the studies presented in the paper we also investigated the applicability of, <b>Transfer Learning</b>, a model trained for one dataset used to infer predictions for another dataset.
+    In specific, we trained Random Forest models on one of our datasets, and evaluated its performance when applied to predict faults in either one of the three datasets.
+    The models were optimized and trained using a gridsearch approach.
+    No crossvalidation was necessary, as, in general, separate datasets were used for training and testing purposes.
+    A noteworthy exception are the three evaluations of the three classifiers trained and tested on the same dataset (e.g. EN - EN).
+  </p>
+<h1>Plot Type</h1>
+  <p>
+    To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and f1-performance for a specific evaluated model.
+    The evaluation result of each trained model is illustrated by a symbol in the plot area.
+    For any given symbol in the plot, its horizontal position corresponds to the precision score of the evaluated model.
+    Likewise, its vertical precision corresponds to the Recall score of the evaluated model.
+    Lastly, the symbol's position in relation to radial lines indicate the model's achieved F1 measure.
+  </p>
+  <p>
+    We use abbreviations of the datasets in the legend (EN = Enron Errors, IN = Info1, EU = Euses).
+    The first term in each legend entry signifies the dataset that was used to train a model.
+    The second term signifies the dataset that the resulting classifier was evaluated on.
+    E.g., the red triangle symbolizes the result of a Random Forest model that was trained on then Enron Errors dataset, and evaluated on the Euses dataset.
+  </p>
+<h1>Plot</h1>
+  <p><img src="appendix/plots/transferLearning/oneSource.png" alt="transfer learning results of RF classifiers trained on one dataset" /><a title="(Data CSV))" href="appendix/data/transferLearning/oneSource.csv">Data CSV</a></p>
+
+    </section>
+  </body>
+</html>

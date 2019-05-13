@@ -1,16 +1,45 @@
 ---
 layout: appendix
-title: Study 2 - Individual metrics as fault predictors
+title: Study 2
+description: Study 2 - Fault prediction with multiple metrics
 ---
-<h2>Study 2: Fault prediction with multiple metrics</h2>
-  <p>ML models that use all metrics of the catalog trained and evaluated on the three datasets (Enron Erros, Info1, Euses) </p>
-  <h3>  Precision / Recall / F1 plots </h3>
-    <p>Visual comparison of average prediction results measured in precision/recall/F1-score </h3>
+<h1>Description</h1>
+  <p>
+    In Study 2, we evaluate the performance of metric combinations when used to train certain ensemble ML model types to predict faulty spreadsheet cells.
+    On this page, we provide high-resulution plots that show these results for the different classifier types evaluated on each of the three datasets (Enron Errors, Info1, Euses).
+    In addition, we provide boxplots for all datasets, that give another perspective on individual learned models's performances during the cross-validation procedure.
+  </p>
+<h1>Plot Types</h1>
+  <p>
+    To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and f1-performance for a specific evaluated model.
+    The evaluation result of each trained model is illustrated by a symbol in the plot area.
+    For any given symbol in the plot, its horizontal position corresponds to the precision score of the evaluated model.
+    Likewise, its vertical precision corresponds to the Recall score of the evaluated model.
+    Lastly, the symbol's position in relation to radial lines indicate the model's achieved F1 measure.
+  </p>
+  <p>
+    <b>Boxplots</b> provide distribution information of the f1-values measured of each individual evaluation during the cross-validation scheme for each learner.
+    For these plots, RF stands for Random Forest, and AB For AdaBoost.
+  </p>
+
+<h1>Plots</h1>
+  <p>
+    Plots are organized into groups based on the employed plot type, first showing Precision / Recall / F1, and then Boxplots of the evaluation.
+  </p>
+  <h2>  Precision / Recall / F1 plots </h2>
     <p><img src="appendix/plots/ensemble/ensemble_ENRON.png" alt="ensemble ENRON" /></p>
     <p><img src="appendix/plots/ensemble/ensemble_INFO1.png" alt="ensemble INFO1" /></p>
     <p><img src="appendix/plots/ensemble/ensemble_EUSES.png" alt="ensemble EUSES" /></p>
-  <h3>  Boxplots </h3>
-    <p>Distribution of measured F1 results of different models on the three datasets in order: Enron Errors, INFO1, and EUSES.</p>
-    <p><img src="appendix/plots/boxplots/boxplot_ENRON.png" alt="boxplot ENRON" /></p>
-    <p><img src="appendix/plots/boxplots/boxplot_INFO1.png" alt="boxplot INFO1" /></p>
-    <p><img src="appendix/plots/boxplots/boxplot_EUSES.png" alt="boxplots EUSES" /></p>
+  <h2> Boxplots </h2>
+    <p>
+      <figcaption>Enron Errors</figcaption>
+      <img src="appendix/plots/boxplots/boxplot_ENRON.png" alt="boxplot ENRON" />
+    </p>
+    <p>
+      <figcaption>Info1</figcaption>
+      <img src="appendix/plots/boxplots/boxplot_INFO1.png" alt="boxplot INFO1" />
+    </p>
+    <p>
+      <figcaption>Euses</figcaption>
+      <img src="appendix/plots/boxplots/boxplot_EUSES.png" alt="boxplots EUSES" />
+    </p>

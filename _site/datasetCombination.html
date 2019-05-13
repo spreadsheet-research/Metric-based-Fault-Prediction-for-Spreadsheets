@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Dataset combination | Metric-based Fault Prediction for Spreadsheets</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Dataset combination" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Combination of data sets" />
+<meta property="og:description" content="Combination of data sets" />
+<link rel="canonical" href="http://localhost:4000/datasetCombination.html" />
+<meta property="og:url" content="http://localhost:4000/datasetCombination.html" />
+<meta property="og:site_name" content="Metric-based Fault Prediction for Spreadsheets" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/datasetCombination.html","headline":"Dataset combination","description":"Combination of data sets","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="/assets/css/style.css?v=6d379d72f7608be83934133fc1f439e86efc672b">
+    <title>Dataset combination</title>
+  </head>
+
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Metric-based Fault Prediction for Spreadsheets</h1>
+      <h2 class="project-tagline">Combination of data sets</h2>
+      <a href="index.html" class="btn">Back to Project Page</a>
+    </section>
+    <section class="main-content" style="text-align: justify">
+      <h1>Description</h1>
+  <p>
+    In addition to the studies presented in the paper we also investigated the effect of using a combinatio of datsets for training and evaluation of fault prediction classifiers.
+    In specific, we trained and evaluated Random Forest models using different combinations of our available datasets (Enron Errors, Info1, Euses).
+    The same gridsearch and crossvalidation approach as described for the main studies was employed for this evaluation.
+  </p>
+<h1>Plot Type</h1>
+  <p>
+    To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and f1-performance for a specific evaluated model.
+    The evaluation result of each trained model is illustrated by a symbol in the plot area.
+    For any given symbol in the plot, its horizontal position corresponds to the precision score of the evaluated model.
+    Likewise, its vertical precision corresponds to the Recall score of the evaluated model.
+    Lastly, the symbol's position in relation to radial lines indicate the model's achieved F1 measure.
+  </p>
+  <p>
+    We use abbreviations of the datasets in the legend (EN = Enron Errors, IN = Info1, EU = Euses).
+    Plot entries that concatenate different datasets using a "+" symbol signify the results of a model that was trained and evaluated on a combination of the named datasets.
+    E.g. "EN+IN" shows the result of the Random Forest model trained and evaluated on a combination of the "Enron Errors" and "Info1" datasets.
+  </p>
+<h1>Plot</h1>
+  <p><img src="appendix/plots/datasetCombination/comparison.png" alt="evaluation results of RF classifiers trained using combinations of the different datasets" /><a title="(Data CSV))" href="appendix/data/datasetCombination/comparison.csv">Data CSV</a></p>
+
+    </section>
+  </body>
+</html>

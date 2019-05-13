@@ -14,12 +14,12 @@
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Metric-based Fault Prediction for Spreadsheets" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/","description":"Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal.","name":"Metric-based Fault Prediction for Spreadsheets","headline":"2018_Metric-based-Fault-Prediction-for-Spreadsheets","@type":"WebSite","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/","headline":"2018_Metric-based-Fault-Prediction-for-Spreadsheets","description":"Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal.","name":"Metric-based Fault Prediction for Spreadsheets","@type":"WebSite","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
-    <link rel="stylesheet" href="/assets/css/style.css?v=8cab8c6b6930f659be225e271023300d4d19814f">
+    <link rel="stylesheet" href="/assets/css/style.css?v=6d379d72f7608be83934133fc1f439e86efc672b">
   </head>
   <body>
     <section class="page-header">
@@ -70,44 +70,16 @@
 
       <h1 id="appendix"> Appendix </h1>
         <p> Additional material, referred to within the original paper. </p>
-        <p> Full-sized plots and descriptions are available for the following topics:</p>
+        <p> Full-sized plots and descriptions of presentid and additional are available for the following topics:</p>
         <ul>
           <li><a href="study1.html">Study 1: Individual metrics as fault predictors</a></li>
           <li><a href="study2.html">Study 2: Fault prediction with multiple metrics</a></li>
+          <li><a href="study3.html">Study 3: Importance of feature selection</a></li>
+          <li><a href="transferLearning.html">Transfer learning</a></li>
+          <li><a href="trainingCombination.html">Combination of training data</a></li>
+          <li><a href="datasetCombination.html">Combination of datasets</a></li>
         </ul>
         <p> A <a title="Pdf appendix" href="appendix/appendix.pdf">pdf appendix</a> provides additinal information and explanations for studies one and two.</p>
-
-        <h2 id="plots_ensemble">Study 2: Fault prediction with multiple metrics</h2>
-          <p>ML models that use all metrics of the catalog trained and evaluated on the three datasets (Enron Erros, Info1, Euses) </p>
-          <h3>  Precision / Recall / F1 plots </h3>
-            <p>Visual comparison of average prediction results measured in precision/recall/F1-score </h3>
-            <p><img src="appendix/plots/ensemble/ensemble_ENRON.png" alt="ensemble ENRON" /></p>
-            <p><img src="appendix/plots/ensemble/ensemble_INFO1.png" alt="ensemble INFO1" /></p>
-            <p><img src="appendix/plots/ensemble/ensemble_EUSES.png" alt="ensemble EUSES" /></p>
-          <h3>  Boxplots </h3>
-            <p>Distribution of measured F1 results of different models on the three datasets in order: Enron Errors, INFO1, and EUSES.</p>
-            <p><img src="appendix/plots/boxplots/boxplot_ENRON.png" alt="boxplot ENRON" /></p>
-            <p><img src="appendix/plots/boxplots/boxplot_INFO1.png" alt="boxplot INFO1" /></p>
-            <p><img src="appendix/plots/boxplots/boxplot_EUSES.png" alt="boxplots EUSES" /></p>
-
-        <h2 id="plots_transfer">Transfer Learning</h2>
-          <p>Random Forest that use all metrics of the catalog, trained on either individual datasets or combinations of datasets, and evaluated on either one dataset (Enron Erros (EN), Info1(IN), Euses(EU)) </p>
-          <h3>  Precision / Recall / F1 plots </h3>
-            <p>Visual comparison of average prediction results measured in precision/recall/F1-score </p>
-            <p><img src="appendix/plots/transferLearning/oneSource.png" alt="transfer learning results of RF classifiers trained on one dataset" /><a title="(Data CSV))" href="appendix/data/transferLearning/oneSource.csv">Data CSV</a></p>
-            <p><img src="appendix/plots/transferLearning/threeSourcesCV.png" alt="transfer learning results of RF classifiers trained on a combination of three datasets" /><a title="(Data CSV))" href="appendix/data/transferLearning/threeSourcesCV.csv">Data CSV</a></p>
-
-        <h2 id="plots_featureImportance">AD Study 3: Feature Importance for Random Forest classifiers</h2>
-          <p>Random Forest classifiers provide a ranking of features that are the most important for decisionmaking. We compared the results of RF classifiers that were trained using either the 5 or 10 most important features for each dataset only, and compared it to previous results. </h3>
-          <h3>  Precision / Recall / F1 plots </h3>
-            <p>Visual comparison of average prediction results measured in precision/recall/F1-score </h3>
-            <p><img src="appendix/plots/limitedFeatures/comparision.png" alt="results of RF classifiers trained using only the 5 most important features" /><a title="(Data CSV))" href="appendix/data/limitedFeatures/comparision.csv">Data CSV</a></p>
-
-        <h2 id="plots_datasetCombination">Dataset Combination</h2>
-          <p>Prediction performance of a learned classifier highly depends on the qulity and consistency of the utilized dataset. In the main studies of our work, we used our available datasets (Enron Errors, Info1, Euses) in separation. In this study, we hence evaluate the combinability of those datasets by evaluating different combination using a trained Random Forest classifier. </p>
-          <h3>  Precision / Recall / F1 plots </h3>
-            <p>Visual comparison of average prediction results measured in precision/recall/F1-score </p>
-            <p><img src="appendix/plots/datasetCombination/comparison.png" alt="evaluation results of RF classifiers trained using combinations of the different datasets" /><a title="(Data CSV))" href="appendix/data/datasetCombination/comparison.csv">Data CSV</a></p>
 
       <footer class="site-footer">
         
