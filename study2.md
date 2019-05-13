@@ -1,6 +1,6 @@
 ---
 layout: appendix
-title: Study 2: Individual metrics as fault predictors
+title: Study 2 - Individual metrics as fault predictors
 ---
 <h2>Study 2: Fault prediction with multiple metrics</h2>
   <p>ML models that use all metrics of the catalog trained and evaluated on the three datasets (Enron Erros, Info1, Euses) </p>

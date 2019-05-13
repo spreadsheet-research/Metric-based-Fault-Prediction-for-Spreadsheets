@@ -1,6 +1,6 @@
 ---
 layout: appendix
-title: Study 1: Individual metrics as fault predictors
+title: Study 1 - Individual metrics as fault predictors
 ---
 <h1>Study 1: Individual metrics as fault predictors</h1>
   <p>Models trained using only one feature and evaluated on the three datasets (Enron Erros, Info1, Euses) </p>
