@@ -14,6 +14,12 @@ description: Most important features of Random Forest classifiers
     We determined the most important features for each of the datasets within a 10x10 cross-valdiation scheme, and aggregated the results using average feature importance scores across all evaluations (Table 1) as well as a Borda count scheme (Table 2).
     For comparison, we also use an evaluation that merge all data into one dataset employing the same cross-validation scheme as above (Table 3).
   </p>
+  <p>
+    Note that some metrics focus on spreadsheet features that are not used in certain datasets.
+    Those metrics consequently do not contribute to any prediction and thus have a feature importance of 0.
+    For example, Metric 37, Decision count, iscounts on the number of used AND and OR predicates in formulas.
+    The Enron Errors corpus, however, does not make use of those predicates, causing the feature importance of this metric to be 0.
+  </p>
 
 <h1>Result Tables</h1>
 <p>
