@@ -1,0 +1,1 @@
+{"scores": {"recall_score": {"std": [0.0], "values": [1.0], "mean": [1.0]}, "precision_score": {"std": [0.0], "values": [1.0], "mean": [1.0]}}, "type": "classifier", "name": "RandomForestClassifier", "dataset_name": "ENRON+ENRON", "label": "RandomForestClassifier"}

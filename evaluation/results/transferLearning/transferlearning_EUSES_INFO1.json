@@ -1,0 +1,1 @@
+{"scores": {"recall_score": {"std": [0.0], "values": [0.0], "mean": [0.0]}, "precision_score": {"std": [0.0], "values": [0.0], "mean": [0.0]}}, "type": "classifier", "name": "RandomForestClassifier", "dataset_name": "EUSES+INFO1", "label": "RandomForestClassifier"}

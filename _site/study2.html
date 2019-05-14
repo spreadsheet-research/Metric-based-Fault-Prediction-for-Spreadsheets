@@ -14,12 +14,12 @@
 <meta property="og:url" content="http://localhost:4000/study2.html" />
 <meta property="og:site_name" content="Metric-based Fault Prediction for Spreadsheets" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/study2.html","headline":"Study 2","description":"Study 2 - Fault prediction with multiple metrics","@type":"WebPage","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/study2.html","description":"Study 2 - Fault prediction with multiple metrics","headline":"Study 2","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
-    <link rel="stylesheet" href="/assets/css/style.css?v=6d379d72f7608be83934133fc1f439e86efc672b">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1e079bb09e3cfdf2b86f599d91fea49334eaf4a0">
     <title>Study 2</title>
   </head>
 
@@ -33,9 +33,68 @@
       <h1>Description</h1>
   <p>
     In Study 2, we evaluate the performance of metric combinations when used to train certain ensemble ML model types to predict faulty spreadsheet cells.
-    On this page, we provide high-resulution plots that show these results for the different classifier types evaluated on each of the three datasets (Enron Errors, Info1, Euses).
+    On this page, we provide additional details about the applied gridsearch-optimization in form of a table, listing the determined hyper-parameter settings.
+    We also provide high-resulution plots that show these results for the different classifier types evaluated on each of the three datasets (Enron Errors, Info1, Euses).
     In addition, we provide boxplots for all datasets, that give another perspective on individual learned models's performances during the cross-validation procedure.
   </p>
+
+<h1>Hyperparameter Settings</h1>
+<p>
+
+</p>
+We optimized the hyper-parameter values for each algorithm in study 2 for each dataset using grid search as described in the study setup.
+The resulting best parameter values are listed in the following table.
+
+<table>
+  <caption>Grid search optimized hyper-parameter settings</caption>
+  <colgroup>
+    <col width="30%" />
+    <col width="10%" />
+    <col width="20%" />
+    <col width="20%" />
+    <col width="20%" />
+  </colgroup>
+  <thead>
+    <tr class="header">
+      <th align="center">Algorithm</th>
+      <th align="center">Parameter</th>
+      <th align="center">Enron Errors</th>
+      <th align="center">INFO 1</th>
+      <th align="center">EUSES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Random Forest</td>
+      <td>N</td>
+      <td>50</td>
+      <td>5</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>SVM (SGD)</td>
+      <td>C</td>
+      <td>0,001</td>
+      <td>0,0001</td>
+      <td>0,0001</td>
+    </tr>
+    <tr>
+      <td>AdaBoost</td>
+      <td>N</td>
+      <td>5</td>
+      <td>50</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>DNN</td>
+      <td>N</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+
 <h1>Plot Types</h1>
   <p>
     To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and f1-performance for a specific evaluated model.

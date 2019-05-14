@@ -1,0 +1,1 @@
+{"scores": {"recall_score": {"std": [0.0], "values": [1.0], "mean": [1.0]}, "precision_score": {"std": [0.0], "values": [0.8094490660806781], "mean": [0.8094490660806781]}}, "type": "classifier", "name": "RandomForestClassifier", "dataset_name": "INFO1+INFO1", "label": "RandomForestClassifier"}

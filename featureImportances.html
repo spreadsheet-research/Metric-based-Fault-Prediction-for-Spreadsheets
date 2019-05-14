@@ -1,0 +1,333 @@
+---
+layout: appendix
+title: Feature importances
+description: Most important features of Random Forest classifiers
+---
+<h1>Description</h1>
+  <p>
+    In Study 3, we investigate the effect of feature selection on the performance of learnd prediction models for the given classification task.
+    In addition to the results shown in the main paper, we also investigated the ranking of feature importances of the different metrics of our catalog based on trained Random Forest classifiers.
+    Random Forest models use a number of Decision Trees to infer predictions.
+    For this inferrence, each individual trained Decision Tree makes a succession of choices based on the value of individual features (i.e. metrics).
+    The more influence a feature has on this decision process (i.e., the more often often it is used to infer a classification), the higher this feature's <b>feature importance</b> score is.
+    Trained Random Forest models of the sklearn framework provide a list of quantified feature importance scores for each metric used in our evaluation.
+    We determined the most important features for each of the datasets within a 10x10 cross-valdiation scheme, and aggregated the results using average feature importance scores across all evaluations (Table 1) as well as a Borda count scheme (Table 2).
+    For comparison, we also use an evaluation that merge all data into one dataset employing the same cross-validation scheme as above (Table 3).
+  </p>
+
+<h1>Result Tables</h1>
+<p>
+<table>
+  <caption>Table 1: 10 most important feature importances on average across all datasets</caption>
+  <colgroup>
+    <col width="10%" />
+    <col width="10%" />
+    <col width="15%" />
+    <col width="35%" />
+    <col width="20%" />
+    <col width="10%" />
+  </colgroup>
+  <thead>
+    <tr class="header">
+      <th align="center">#</th>
+      <th align="center">Score</th>
+      <th align="center">Metric No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Novel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>0,056</td>
+      <td>9</td>
+      <td>Standard deviation column</td>
+      <td>Cell</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0,053</td>
+      <td>56</td>
+      <td>Number of formula cells</td>
+      <td>Worksheet</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0,041</td>
+      <td>60</td>
+      <td>Predecessors</td>
+      <td>Worksheet</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0,037</td>
+      <td>10</td>
+      <td>Standard deviation row</td>
+      <td>Cell</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>0,036</td>
+      <td>63</td>
+      <td>Successors</td>
+      <td>Worksheet</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>0,036</td>
+      <td>34</td>
+      <td>Similar formulas</td>
+      <td>Formula cell</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>0,033</td>
+      <td>38</td>
+      <td>Length of formula</td>
+      <td>Formula</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>0,032</td>
+      <td>42</td>
+      <td>Number of binary operators</td>
+      <td>Formula</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>0,032</td>
+      <td>1</td>
+      <td>Column</td>
+      <td>Cell</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>0,031</td>
+      <td>47</td>
+      <td>Number of operands</td>
+      <td>Formula</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<p>
+<table>
+  <caption>Table 2: 10 most important feature importances across all datasets using Borda count</caption>
+  <colgroup>
+    <col width="10%" />
+    <col width="10%" />
+    <col width="15%" />
+    <col width="35%" />
+    <col width="20%" />
+    <col width="10%" />
+  </colgroup>
+  <thead>
+    <tr class="header">
+      <th align="center">#</th>
+      <th align="center">Borda</th>
+      <th align="center">Metric No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Novel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>169</td>
+      <td>56</td>
+      <td>Number of formula cells</td>
+      <td>worksheet</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>165</td>
+      <td>1</td>
+      <td>Column</td>
+      <td>Cell</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>164</td>
+      <td>34</td>
+      <td>Similar formulas</td>
+      <td>Formula cell</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>164</td>
+      <td>63</td>
+      <td>Successors</td>
+      <td>Worksheet</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>162</td>
+      <td>60</td>
+      <td>Predecessors</td>
+      <td>Worksheet</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>159</td>
+      <td>58</td>
+      <td>Unique formulas</td>
+      <td>Worksheet</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>158</td>
+      <td>30</td>
+      <td>Column reference spreading</td>
+      <td>Formula cell</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>158</td>
+      <td>55</td>
+      <td>Cells</td>
+      <td>Worksheet</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>154</td>
+      <td>10</td>
+      <td>Standard deviation row</td>
+      <td>Cell</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>152</td>
+      <td>57</td>
+      <td>Columns</td>
+      <td>Worksheet</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<p>
+<table>
+  <caption>Table 3: 10 most important feature on the merged dataset</caption>
+  <colgroup>
+    <col width="10%" />
+    <col width="10%" />
+    <col width="15%" />
+    <col width="35%" />
+    <col width="20%" />
+    <col width="10%" />
+  </colgroup>
+  <thead>
+    <tr class="header">
+      <th align="center">#</th>
+      <th align="center">Score</th>
+      <th align="center">Metric No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Novel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>0,042</td>
+      <td>63</td>
+      <td>Successors</td>
+      <td>Worksheet</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0,041</td>
+      <td>56</td>
+      <td>Number of formula cells</td>
+      <td>Worksheet</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0,040</td>
+      <td>60</td>
+      <td>Predecessors</td>
+      <td>Worksheet</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0,040</td>
+      <td>9</td>
+      <td>Standard deviation column</td>
+      <td>Cell</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>0,037</td>
+      <td>40</td>
+      <td>Maximal nesting level</td>
+      <td>Formula</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>0,037</td>
+      <td>34</td>
+      <td>Similar formulas</td>
+      <td>Formula cell</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>0,036</td>
+      <td>64</td>
+      <td>Successors in other worksheets</td>
+      <td>Worksheet</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>0,036</td>
+      <td>47</td>
+      <td>Number of operands</td>
+      <td>Formula</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>0,036</td>
+      <td>30</td>
+      <td>Column reference spreading</td>
+      <td>Formula cell</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>0,034</td>
+      <td>42</td>
+      <td>Number of binary operators</td>
+      <td>Formula</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+</p>

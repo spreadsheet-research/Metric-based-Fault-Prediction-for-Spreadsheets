@@ -1,0 +1,1 @@
+{"scores": {"recall_score": {"std": [0.0], "values": [0.009929078014184398], "mean": [0.009929078014184398]}, "precision_score": {"std": [0.0], "values": [0.004364089775561097], "mean": [0.004364089775561097]}}, "type": "classifier", "name": "RandomForestClassifier", "dataset_name": "INFO1+EUSES", "label": "RandomForestClassifier"}
