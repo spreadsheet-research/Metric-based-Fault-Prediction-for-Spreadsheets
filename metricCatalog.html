@@ -1,0 +1,1938 @@
+---
+layout: appendix
+title: Metric catalog
+description: Metric catalog
+---
+<h1>Description</h1>
+  <p>
+    One main contribution of our work is a catalog of 64 metrics, based both on existing work from the literature and our own expertise.
+    When selecting metrics for the catalog, our goal was to provide a broad range of different measurements to cover a wide variety of faults occurring in practice.
+    We first scanned previous research that discussed possible characteristics for assessing the quality of spreadsheets and extracted those ideas that seemed likely to be correlated with certain types of faults in spreadsheets.
+    Not all identified characteristics could be applied directly.
+    In such cases, the general idea of the metric was adapted so that it can be measured in terms of a numeric value.
+    For example, Metric 2, Column distance to relative, is conceptually based on the Pattern Finder spreadsheet smell.
+    Likewise, except for certain spreadsheet smells, worksheet metrics are uncommon in the current literature.
+    Many stated worksheet metrics are therefore designated as novel, however they often use concepts that are common for non-worksheet contexts like the number of formula cells in a spreadsheet.
+    We present the catalog using a collection of three tables:
+  </p>
+  <ul>
+    <li><a href="#table1">Table 1</a> provides an overview of the metric catalog.</li>
+    <li><a href="#table2">Table 2</a>  extends on the overview information in table 1 with a more detailed description and explanation for each metric.</li>
+    <li><a href="#table3">Table 3</a>  provides a literature list that is referred to in tables 1 and 2.</li>
+  </ul>
+
+<h1 id="table1">Table 1: Catalog Overwiew</h1>
+<p>
+<table>
+  <colgroup>
+    <col width="10%" />
+    <col width="70%" />
+    <col width="10%" />
+    <col width="10%" />
+  </colgroup>
+  <thead>
+    <tr class="header">
+      <th colspan="4" align="center">Metrics calculated per cell</th>
+    </tr>
+  <thead>
+    <tr class="header">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Source</th>
+      <th align="center">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Column</td>
+      <td>Novel</td>
+      <td><a href="#metric1">details</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Column distance to relative</td>
+      <td><a href="#reference7">7</a>,<a href="#reference8">8</a></td>
+      <td><a href="#metric2">details</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Row distance to relative</td>
+      <td><a href="#reference7">7</a>,<a href="#reference8">8</a></td>
+      <td><a href="#metric3">details</a></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Range references to cell</td>
+      <td>Novel</td>
+      <td><a href="#metric4">details</a></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Direct references to cell</td>
+      <td>Novel</td>
+      <td><a href="#metric5">details</a></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>References to cell (fan-in)</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a>,<a href="#reference5">5</a></td>
+      <td><a href="#metric6">details</a></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>References to cell from other worksheets</td>
+      <td>Novel</td>
+      <td><a href="#metric7">details</a></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Row</td>
+      <td>Novel</td>
+      <td><a href="#metric8">details</a></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Standard deviation column</td>
+      <td><a href="#reference7">7</a>,<a href="#reference8">8</a></td>
+      <td><a href="#metric9">details</a></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Standard deviation row</td>
+      <td><a href="#reference7">7</a>,<a href="#reference8">8</a></td>
+      <td><a href="#metric10">details</a></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Successor cells (fan-in; visibility)</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a>,<a href="#reference5">5</a></td>
+      <td><a href="#metric11">details</a></td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <td>12</td>
+      <td>Successor cells in other worksheets</td>
+      <td><a href="#reference9">9</a></td>
+      <td><a href="#metric12">details</a></td>
+    </tr>
+    <tr class="header">
+      <th colspan="4" align="center">Metrics calculated per formula cell</th>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Complexity of conditional construct</td>
+      <td><a href="#reference1">1</a></td>
+      <td><a href="#metric13">details</a></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Dispersion of references</td>
+      <td><a href="#reference1">1</a></td>
+      <td><a href="#metric14">details</a></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Longest calculation chain</td>
+      <td><a href="#reference1">1</a>,<a href="#reference2">2</a>,<a href="#reference3">3</a>,<a href="#reference4">4</a>,<a href="#reference5">5</a></td>
+      <td><a href="#metric15">details</a></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Predecessors (fan-out, scope)</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a></td>
+      <td><a href="#metric16">details</a></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Distant predecessors</td>
+      <td><a href="#reference5">5</a></td>
+      <td><a href="#metric17">details</a></td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Empty predecessors</td>
+      <td><a href="#reference7">7</a>,<a href="#reference8">8</a></td>
+      <td><a href="#metric18">details</a></td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Predecessors in different columns</td>
+      <td><a href="#reference5">5</a></td>
+      <td><a href="#metric19">details</a></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Predecessors in different rows</td>
+      <td><a href="#reference5">5</a></td>
+      <td><a href="#metric20">details</a></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Predecessors in other worksheets</td>
+      <td><a href="#reference9">9</a></td>
+      <td><a href="#metric21">details</a></td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Middleman predecessors</td>
+      <td><a href="#reference9">9</a></td>
+      <td><a href="#metric22">details</a></td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>Reverse predecessors</td>
+      <td><a href="#reference5">5</a></td>
+      <td><a href="#metric23">details</a></td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>Cumulative range height growth</td>
+      <td><a href="#reference1">1</a></td>
+      <td><a href="#metric24">details</a></td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>Cumulative range width growth</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a></td>
+      <td><a href="#metric25">details</a></td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>Reachability</td>
+      <td><a href="#reference1">1</a></td>
+      <td><a href="#metric26">details</a></td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>Average reachability</td>
+      <td><a href="#reference1">1</a></td>
+      <td><a href="#metric27">details</a></td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>References to other worksheets</td>
+      <td>Novel</td>
+      <td><a href="#metric28">details</a></td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>Reference distance</td>
+      <td>Novel</td>
+      <td><a href="#metric29">details</a></td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>Column reference spreading</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a></td>
+      <td><a href="#metric30">details</a></td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>Row reference spreading</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a></td>
+      <td><a href="#metric">details</a></td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>Worksheet reference spreading</td>
+      <td><a href="#reference4">4</a></td>
+      <td><a href="#metric32">details</a></td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>Duplicated calculations</td>
+      <td><a href="#reference7">7</a></td>
+      <td><a href="#metric33">details</a></td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <td>34</td>
+      <td>Similar formulas</td>
+      <td><a href="#reference2">2</a>,<a href="#reference3">3</a></td>
+      <td><a href="#metric">details</a></td>
+    </tr>
+    <tr class="header">
+      <th colspan="4" align="center">Metrics calculated per formula</th>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>Conditional complexity</td>
+      <td><a href="#reference1">1</a></td>
+      <td><a href="#metric35">details</a></td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>Conditional operations</td>
+      <td><a href="#reference5">5</a></td>
+      <td><a href="#metric36">details</a></td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>Decision count</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a></td>
+      <td><a href="#metric37">details</a></td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>Length of formula</td>
+      <td>Novel</td>
+      <td><a href="#metric38">details</a></td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>Average nesting level</td>
+      <td><a href="#reference1">1</a>,<a href="#reference6">6</a></td>
+      <td><a href="#metric39">details</a></td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>Maximal nesting level</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a>,<a href="#reference5">5</a>,<a href="#reference6">6</a></td>
+      <td><a href="#metric40">details</a></td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>Number of range references</td>
+      <td>Novel</td>
+      <td><a href="#metric41">details</a></td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>Number of binary operators</td>
+      <td>Novel</td>
+      <td><a href="#metric42">details</a></td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>Number of direct references</td>
+      <td>Novel</td>
+      <td><a href="#metric43">details</a></td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>Number of constants</td>
+      <td><a href="#reference1">1</a></td>
+      <td><a href="#metric44">details</a></td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>Number of function operators</td>
+      <td>Novel</td>
+      <td><a href="#metric45">details</a></td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td>Number of name references</td>
+      <td>Novel</td>
+      <td><a href="#metric46">details</a></td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>Number of operands</td>
+      <td><a href="#reference1">1</a></td>
+      <td><a href="#metric47">details</a></td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>Number of operators</td>
+      <td><a href="#reference1">1</a>,<a href="#reference2">2</a>,<a href="#reference3">3</a></td>
+      <td><a href="#metric48">details</a></td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>Number of parenthesis operators</td>
+      <td>Novel</td>
+      <td><a href="#metric49">details</a></td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>Number of percent operators</td>
+      <td>Novel</td>
+      <td><a href="#metric50">details</a></td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>Number of range references</td>
+      <td>Novel</td>
+      <td><a href="#metric51">details</a></td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>Number of references</td>
+      <td><a href="#reference2">2</a>,<a href="#reference3">3</a></td>
+      <td><a href="#metric52">details</a></td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>Number of unary operators</td>
+      <td>Novel</td>
+      <td><a href="#metric53">details</a></td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <td>54</td>
+      <td>Number of union references</td>
+      <td>Novel</td>
+      <td><a href="#metric54">details</a></td>
+    </tr>
+    <tr class="header">
+      <th colspan="4" align="center">Metrics calculated per worksheet</th>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>Cells</td>
+      <td>Novel</td>
+      <td><a href="#metric55">details</a></td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>Number of formula cells</td>
+      <td>Novel</td>
+      <td><a href="#metric56">details</a></td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>Columns</td>
+      <td>Novel</td>
+      <td><a href="#metric57">details</a></td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>Unique formulas</td>
+      <td>Novel</td>
+      <td><a href="#metric58">details</a></td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>Position</td>
+      <td>Novel</td>
+      <td><a href="#metric59">details</a></td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>Predecessors</td>
+      <td>Novel</td>
+      <td><a href="#metric60">details</a></td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>Predecessors in other worksheets</td>
+      <td><a href="#reference9">9</a></td>
+      <td><a href="#metric61">details</a></td>
+    </tr>
+    <tr>
+      <td>62</td>
+      <td>Rows</td>
+      <td>Novel</td>
+      <td><a href="#metric62">details</a></td>
+    </tr>
+    <tr>
+      <td>63</td>
+      <td>Successors</td>
+      <td>Novel</td>
+      <td><a href="#metric63">details</a></td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>Successors in other worksheets</td>
+      <td><a href="#reference9">9</a></td>
+      <td><a href="#metric64">details</a></td>
+    </tr>
+  </tbody>
+</table>
+</p>
+
+<h1 id="table2">Table 2: Detailed Catalog</h1>
+<p>
+<table>
+  <colgroup>
+    <col width="10%" />
+    <col width="40%" />
+    <col width="20%" />
+    <col width="20%" />
+  </colgroup>
+  <tbody>
+    <!-- Metric 1 -->
+    <tr class="header" id="metric1">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">1</td>
+      <td>Column</td>
+      <td>Cell</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Column number (position) of the cell in the worksheet.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">The further away a column is from a worksheet's origin (column A), the less likely it is to be checked and the harder it is to verify its references. In addition, under the assumption that spreadsheets are developed from top to bottom and from left to right, we may also observe more inputs in the top left corner and more complex aggregation functions farther below and to the right.</td>
+    </tr>
+
+    <!-- Metric 2 -->
+    <tr class="header" id="metric2">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">2</td>
+      <td>Column distance to relative</td>
+      <td>Cell</td>
+      <td><a href="#reference7">7</a>,<a href="#reference8">8</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Distance to the next cell in the same column that has the same cell type (e.g. number or string); we use a predefined and configurable maximum value for this metric. Adapted from Pattern Finder to provide a numeric score.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Spreadsheets usually group collections of items (labels, input, calculations) into neighboring columns and/or rows of cells that consequently have the same type. Cells of a specific type far away from other cells of the same type might therefore hint at mistakes in such setups.</td>
+    </tr>
+
+    <!-- Metric 3 -->
+    <tr class="header" id="metric3">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">3</td>
+      <td>Row distance to relative</td>
+      <td>Cell</td>
+      <td><a href="#reference7">7</a>,<a href="#reference8">8</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Distance to the next cell in the same row that has the same cell type; we use a predefined and configurable maximum value for this metric. Adapted from Pattern Finder to provide a numeric score.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Spreadsheets usually group collections of items (labels, input, calculations) into successive columns and/or rows of cells that consequently feature the same type. Cells of a specific type far away from other cells of the same type might therefore hint at mistakes in such setups.</td>
+    </tr>
+
+    <!-- Metric 4 -->
+    <tr class="header" id="metric4">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">4</td>
+      <td>Range references to cell</td>
+      <td>Cell</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of range references referring to this cell. Counts multiple references from the same cell individually.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">The more often a cell is referred to, the more central it is for the functionality of a given sheet. Hence, the more often it usually is considered when checking a spreadsheet, and it is thus less likely to contain a fault.</td>
+    </tr>
+
+    <!-- Metric 5 -->
+    <tr class="header" id="metric5">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">5</td>
+      <td>Direct references to cell</td>
+      <td>Cell</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of direct references to this cell (not as part of range references or named ranges; multiple references in the same formula are counted individually.)</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">The more often a cell is referred to, the more central it is for the functionality of a given sheet. Hence, the more often it usually is considered when checking a spreadsheet, and it is thus less likely to contain a fault.</td>
+    </tr>
+
+    <!-- Metric 6 -->
+    <tr class="header" id="metric6">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">6</td>
+      <td>References to cell (fan-in)</td>
+      <td>Cell</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a>,<a href="#reference5">5</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of any references to the cell, i.e., sum of metrics 4 and 5.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">The more often a cell is referred to, the more central it is for the functionality of a given sheet. Hence, the more often it usually is considered when checking a spreadsheet, and it is thus less likely to contain a fault.</td>
+    </tr>
+
+    <!-- Metric 7 -->
+    <tr class="header" id="metric7">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">7</td>
+      <td>References to cell from other worksheets</td>
+      <td>Cell</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of direct and range references in other worksheets that refer to this cell.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">The more often a cell is referred to, the more central it is for the functionality of a given sheet. Hence, the more often it usually is considered when checking a spreadsheet, and it is thus less likely to contain a fault.</td>
+    </tr>
+
+    <!-- Metric 8 -->
+    <tr class="header" id="metric8">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">8</td>
+      <td>Row</td>
+      <td>Cell</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Row number (position) of the cell in the worksheet.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">The further away a column is from a worksheet's origin (column A), the less likely it is to be checked and the harder it is to verify its references. In addition, under the assumption that spreadsheets are developed from top to bottom and from left to right, we may also observe more inputs in the top left corner and more complex aggregation functions farther below and to the right.</td>
+    </tr>
+
+    <!-- Metric 9 -->
+    <tr class="header" id="metric9">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">9</td>
+      <td>Standard deviation column</td>
+      <td>Cell</td>
+      <td><a href="#reference7">7</a>,<a href="#reference8">8</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Absolute difference to the mean of the numeric values in the column for cells with numeric values.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Cells of the same column are often used to conduct the same calculation steps to sets of different input data. Statistical noteworthy outliers in such calculations might indicate an introduced error.</td>
+    </tr>
+
+    <!-- Metric 10 -->
+    <tr class="header" id="metric10">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">10</td>
+      <td>Standard deviation row</td>
+      <td>Cell</td>
+      <td><a href="#reference7">7</a>,<a href="#reference8">8</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Absolute difference to the mean of the numeric values in the row.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Cells of the same row are often used to conduct the same calculation steps to sets of different input data. Statistical noteworthy outliers in such calculations might indicate an introduced error.</td>
+    </tr>
+
+    <!-- Metric 11 -->
+    <tr class="header" id="metric11">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">11</td>
+      <td>Successor cells (fan-in; visibility)</td>
+      <td>Cell</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a>,<a href="#reference5">5</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of cells that are referring to the cell by either direct or range references (also known as fan-in and visibility).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">The more often a cell is referred to, the more central it is for the functionality of a given sheet. Hence, the more often it usually is considered when checking a spreadsheet, and it is thus less likely to contain a fault.</td>
+    </tr>
+
+    <!-- Metric 12 -->
+    <tr class="header" id="metric12">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">12</td>
+      <td>Successor cells in other worksheets</td>
+      <td>Cell</td>
+      <td><a href="#reference9">9</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of cells in other worksheets that are referring to the cell by either direct or range references.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">The more often a cell is referred to, the more central it is for the functionality of a given sheet. Hence, the more often it usually is considered when checking a spreadsheet, and it is thus less likely to contain a fault.</td>
+    </tr>
+
+    <!-- Metric 13 -->
+    <tr class="header" id="metric13">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">13</td>
+      <td>Complexity of conditional construct</td>
+      <td>Formula cell</td>
+      <td><a href="#reference1">1</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Calculated by adding the conditional complexity (metric 35) of this cell to the complexity of conditional construct metrics (13) of referenced cells.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Adapted from "sum of complexities of nested or precedent conditionals". The more complex the cell's own formula and formulas of referred cells, the harder it is to check.</td>
+    </tr>
+
+    <!-- Metric 14 -->
+    <tr class="header" id="metric14">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">14</td>
+      <td>Dispersion of references</td>
+      <td>Formula cell</td>
+      <td><a href="#reference1">1</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Exponential utility function of the weighted sum of the distances to references in the same worksheet.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">References to cells that are far away from the formula cell are more likely to be misplaced.</td>
+    </tr>
+
+    <!-- Metric 15 -->
+    <tr class="header" id="metric15">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">15</td>
+      <td>Longest calculation chain</td>
+      <td>Formula cell</td>
+      <td><a href="#reference1">1</a>,<a href="#reference2">2</a>,<a href="#reference3">3</a>,<a href="#reference4">4</a>,<a href="#reference5">5</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Longest calculation chain that needs to be checked during evaluation of the cell.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Longer chains are more complex to design and test; they lead to increased cognitive load.</td>
+    </tr>
+
+    <!-- Metric 16 -->
+    <tr class="header" id="metric16">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">16</td>
+      <td>Predecessors (fan-out, scope)</td>
+      <td>Formula cell</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of cells that are referenced by the cell by any reference type.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">More references can lead to higher cognitive complexity and add more potential sources of mis-referencing.</td>
+    </tr>
+
+    <!-- Metric 17 -->
+    <tr class="header" id="metric17">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">17</td>
+      <td>Distant predecessors</td>
+      <td>Formula cell</td>
+      <td><a href="#reference5">5</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of predecessors that lie further away than a defined and configurable number of columns or rows from the formula.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">References to cells that are far away from the formula cell are more likely to be misplaced.</td>
+    </tr>
+
+    <!-- Metric 18 -->
+    <tr class="header" id="metric18">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">18</td>
+      <td>Empty predecessors</td>
+      <td>Formula cell</td>
+      <td><a href="#reference7">7</a>,<a href="#reference8">8</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of referenced cells that are empty (direct and range references).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">References to empty cells might be wrongly placed (in case they are not pointing to input cells to be filled).</td>
+    </tr>
+
+    <!-- Metric 19 -->
+    <tr class="header" id="metric19">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">19</td>
+      <td>Predecessors in different columns</td>
+      <td>Formula cell</td>
+      <td><a href="#reference5">5</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of referenced cells that are in a different column (or different worksheet).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Aggregations are commonly done row- or column wise. Referring to cells outside these areas can indicate misplaced references. Cross-worksheet references cannot be easily checked visually.</td>
+    </tr>
+
+    <!-- Metric 20 -->
+    <tr class="header" id="metric20">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">20</td>
+      <td>Predecessors in different rows</td>
+      <td>Formula cell</td>
+      <td><a href="#reference5">5</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of referenced cells that are in a different row (or different worksheet).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Aggregations are commonly done row- or column wise. Referring to cells outside these areas can indicate misplaced references. Cross-worksheet references cannot be easily checked visually</td>
+    </tr>
+
+    <!-- Metric 21 -->
+    <tr class="header" id="metric21">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">21</td>
+      <td>Predecessors in other worksheets</td>
+      <td>Formula cell</td>
+      <td><a href="#reference9">9</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of predecessors of this cell in other worksheets.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">References to other worksheets are more difficult to (visually) validate</td>
+    </tr>
+
+    <!-- Metric 22 -->
+    <tr class="header" id="metric22">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">22</td>
+      <td>Middleman predecessors</td>
+      <td>Formula cell</td>
+      <td><a href="#reference9">9</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of referenced cells that only contain a single direct reference in their formula.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Such redundant calculation chains can indicate a design problem.</td>
+    </tr>
+
+    <!-- Metric 23 -->
+    <tr class="header" id="metric23">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">23</td>
+      <td>Reverse predecessors</td>
+      <td>Formula cell</td>
+      <td><a href="#reference5">5</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of referenced cells that are to the right or below the current cell, or in a worksheet with a greater sheet index.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Under the assumption of top-to-bottom, left-to-right calculation flows, this can indicate a design problem</td>
+    </tr>
+
+    <!-- Metric 24 -->
+    <tr class="header" id="metric24">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">24</td>
+      <td>Cumulative range height growth</td>
+      <td>Formula cell</td>
+      <td><a href="#reference1">1</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Sum of range heights (-1) of the ranges referenced by the cell; e.g., the reference A1:A5 adds a height growth of 4.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Range references introduce cells in additional rows that need to be checked for a given reference, making it harder to validate a formula.</td>
+    </tr>
+
+    <!-- Metric 25 -->
+    <tr class="header" id="metric25">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">25</td>
+      <td>Cumulative range width growth</td>
+      <td>Formula cell</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Sum of range widths (-1) of the ranges referenced by the cell; e.g., the reference A1:C1 adds a width growth of 2.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Range references introduce cells in additional columns that need to be checked for a given reference, making it harder to validate a formula.</td>
+    </tr>
+
+    <!-- Metric 26 -->
+    <tr class="header" id="metric26">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">26</td>
+      <td>Reachability</td>
+      <td>Formula cell</td>
+      <td><a href="#reference1">1</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of different paths from input cells to the cell.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">More paths means more complexity when checking the calculation in the given cell.</td>
+    </tr>
+
+    <!-- Metric 27 -->
+    <tr class="header" id="metric27">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">27</td>
+      <td>Average reachability</td>
+      <td>Formula cell</td>
+      <td><a href="#reference1">1</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Average calculation chain lengths of all references of the cell </td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Longer calculation chains indicate higher complexity, both for designing the formula and for testing.</td>
+    </tr>
+
+    <!-- Metric 28 -->
+    <tr class="header" id="metric28">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">28</td>
+      <td>References to other worksheets</td>
+      <td>Formula cell</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of references of this cell to other worksheets (counts multiple, coinciding references).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">References to other worksheets are more difficult to (visually) validate; this leads to a higher chance of misplaced references.</td>
+    </tr>
+
+    <!-- Metric 29 -->
+    <tr class="header" id="metric29">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">29</td>
+      <td>Reference distance</td>
+      <td>Formula cell</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Sum of Manhattan distances between cell and referenced cells.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">It is more difficult to validate relationships between cells that are far away from each other.</td>
+    </tr>
+
+    <!-- Metric 30 -->
+    <tr class="header" id="metric30">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">30</td>
+      <td>Column reference spreading</td>
+      <td>Formula cell</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Distance in terms of columns between the left-most and right-most cells of the set of referenced cells including the examined cell; we only consider referenced cells that are in the same worksheet as the examined cell.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">It is more difficult to validate relationships between cells that are far away from each other.</td>
+    </tr>
+
+    <!-- Metric 31 -->
+    <tr class="header" id="metric31">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">31</td>
+      <td>Row reference spreading</td>
+      <td>Formula cell</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Distance in terms of rows of the top-most and bottom-most cell of the set of referenced cells including the examined cell; we only consider referenced cells that are in the same worksheet as the examined cell.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">It is more difficult to validate relationships between cells that are far away from each other.</td>
+    </tr>
+
+    <!-- Metric 32 -->
+    <tr class="header" id="metric32">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">32</td>
+      <td>Worksheet reference spreading</td>
+      <td>Formula cell</td>
+      <td><a href="#reference4">4</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Maximum worksheet distance between referenced cells.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">It is more difficult to validate relationships between cells that are placed in worksheets that are far away from each other.</td>
+    </tr>
+
+    <!-- Metric 33 -->
+    <tr class="header" id="metric33">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">33</td>
+      <td>Duplicated calculations</td>
+      <td>Formula cell</td>
+      <td><a href="#reference7">7</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of formulas located in the same worksheet whose formulas match in A1 notation.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">This indicates a design problem or a copy-paste error.</td>
+    </tr>
+
+    <!-- Metric 34 -->
+    <tr class="header" id="metric34">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">34</td>
+      <td>Similar formulas</td>
+      <td>Formula cell</td>
+      <td><a href="#reference2">2</a>,<a href="#reference3">3</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of formulas located in the same worksheet whose formulas in R1C1 notation share a proper subtree without being the same formula.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">This indicates a design problem (repeated calculations), or the result of a copy-past error.</td>
+    </tr>
+
+    <!-- Metric 35 -->
+    <tr class="header" id="metric35">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">35</td>
+      <td>Conditional complexity</td>
+      <td>Formula</td>
+      <td><a href="#reference1">1</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Complexity of a formula based on conditional paths established by nested conditional operators in the abstract syntax tree (AST) of the formula. Non-conditional (sub-)expressions have complexity one, conditional operators (refer to list in metric 36) have 2, conditionals double the complexity of nested conditionals (e.g., IF(A1,1,IF(A2,2,3)) has complexity 4).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Complex formulas are more difficult to design and to validate.</td>
+    </tr>
+
+    <!-- Metric 36 -->
+    <tr class="header" id="metric36">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">36</td>
+      <td>Conditional operations</td>
+      <td>Formula</td>
+      <td><a href="#reference5">5</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of conditional operators (AND, OR, XOR, NOT, IF, SWITCH, IFS, IFERROR, IFNA, COUNTIF, COUNTIFS, SUMIF, SUMIFS)</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Complex formulas are more difficult to design and to validate.</td>
+    </tr>
+
+    <!-- Metric 37 -->
+    <tr class="header" id="metric37">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">37</td>
+      <td>Decision count</td>
+      <td>Formula</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of AND and OR predicates.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Complex formulas are more difficult to design and to validate.</td>
+    </tr>
+
+    <!-- Metric 38 -->
+    <tr class="header" id="metric38">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">38</td>
+      <td>Length of formula</td>
+      <td>Formula</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Total number of operands and operators (i.e., sum of metrics 47 and 48).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Complex formulas are more difficult to design and to validate.</td>
+    </tr>
+
+    <!-- Metric 39 -->
+    <tr class="header" id="metric39">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">39</td>
+      <td>Average nesting level</td>
+      <td>Formula</td>
+      <td><a href="#reference1">1</a>,<a href="#reference6">6</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Average depth of nodes in the formula's abstract syntax tree, e.g., =A1+A2 has an average depth of 0.67 with the operator being the tree root and the two references being at depth 1.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Complex formulas are more difficult to design and to validate.</td>
+    </tr>
+
+    <!-- Metric 40 -->
+    <tr class="header" id="metric40">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">40</td>
+      <td>Maximal nesting level</td>
+      <td>Formula</td>
+      <td><a href="#reference1">1</a>,<a href="#reference4">4</a>,<a href="#reference5">5</a>,<a href="#reference6">6</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Maximum depth of nodes in the formula's AST, e.g.,=A1+A2 has a maximum depth of 1.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Complex formulas are more difficult to design and to validate.</td>
+    </tr>
+
+    <!-- Metric 41 -->
+    <tr class="header" id="metric41">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">41</td>
+      <td>Number of range references</td>
+      <td>Formula</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of references to (non-complex) ranges (e.g., A1:B2).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Ranges increase the number of inputs to a calculation and, thereby, the complexity of a formula.</td>
+    </tr>
+
+    <!-- Metric 42 -->
+    <tr class="header" id="metric42">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">42</td>
+      <td>Number of binary operators</td>
+      <td>Formula</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of binary operators (+, -, *, /, %, =, >=, >, <, <=, <>, ^).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Complex formulas are more difficult to design and to validate.</td>
+    </tr>
+
+    <!-- Metric 43 -->
+    <tr class="header" id="metric43">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">43</td>
+      <td>Number of direct references</td>
+      <td>Formula</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of direct references to individual cells (e.g., A1).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Complex formulas are more difficult to design and to validate.</td>
+    </tr>
+
+    <!-- Metric 44 -->
+    <tr class="header" id="metric44">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">44</td>
+      <td>Number of constants</td>
+      <td>Formula</td>
+      <td><a href="#reference1">1</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of constants.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Constants that are hidden in the cell of a formula are not directly apparent and therefor hard to validate.</td>
+    </tr>
+
+    <!-- Metric 45 -->
+    <tr class="header" id="metric45">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">45</td>
+      <td>Number of function operators</td>
+      <td>Formula</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of calls to built-in functions (e.g., SUM).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">The use of functions increases the complexity of calculations, compared to plain arithmetic operators.</td>
+    </tr>
+
+    <!-- Metric 46 -->
+    <tr class="header" id="metric46">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">46</td>
+      <td>Number of name references</td>
+      <td>Formula</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of references to names.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">The placement and content of named ranges are not apparent in common spreadsheet UIs, making references to named ranges hard to validate.</td>
+    </tr>
+
+    <!-- Metric 47 -->
+    <tr class="header" id="metric47">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">47</td>
+      <td>Number of operands</td>
+      <td>Formula</td>
+      <td><a href="#reference1">1</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Sum of metrics 44 and 52.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Complex formulas are more difficult to design and to validate.</td>
+    </tr>
+
+    <!-- Metric 48 -->
+    <tr class="header" id="metric48">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">48</td>
+      <td>Number of operators</td>
+      <td>Formula</td>
+      <td><a href="#reference1">1</a>,<a href="#reference2">2</a>,<a href="#reference3">3</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Sum of metrics 42, 45, 49, 50, and 53.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Complex formulas are more difficult to design and to validate.</td>
+    </tr>
+
+    <!-- Metric 49 -->
+    <tr class="header" id="metric49">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">49</td>
+      <td>Number of parenthesis operators</td>
+      <td>Formula</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of parenthesis pairs.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Nested formulas are more difficult to design and to validate.</td>
+    </tr>
+
+    <!-- Metric 50 -->
+    <tr class="header" id="metric50">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">50</td>
+      <td>Number of percent operators</td>
+      <td>Formula</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of percent operators (%).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Percent operator in Excel is not following common mathematical notation and thus prone to misinterpretation.</td>
+    </tr>
+
+    <!-- Metric 51 -->
+    <tr class="header" id="metric51">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">51</td>
+      <td>Number of range references</td>
+      <td>Formula</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of combined range references (e.g., A1:B2:C3).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Range references increase the number of inputs for a formula and, thus, its complexity. Combined ranges can be complex in themselves.</td>
+    </tr>
+
+    <!-- Metric 52 -->
+    <tr class="header" id="metric52">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">52</td>
+      <td>Number of references</td>
+      <td>Formula</td>
+      <td><a href="#reference2">2</a>,<a href="#reference3">3</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Sum of metrics 41, 43, 46, 51, and 54.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">More input cells increase the complexity of a formula, making them more error-prone.</td>
+    </tr>
+
+    <!-- Metric 53 -->
+    <tr class="header" id="metric53">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">53</td>
+      <td>Number of unary operators</td>
+      <td>Formula</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of unary operators (unary + and -).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Complex formulas are more difficult to design and to validate. Unary operators are, in addition, uncommonly used and thus are likely to indicate unintentional use.</td>
+    </tr>
+
+    <!-- Metric 54 -->
+    <tr class="header" id="metric54">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">54</td>
+      <td>Number of union references</td>
+      <td>Formula</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of references in union form (e.g., A1;B2 counts as one reference).</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">More input cells increase the complexity of a formula, making them more error-prone.</td>
+    </tr>
+
+    <!-- Metric 55 -->
+    <tr class="header" id="metric55">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">55</td>
+      <td>Cells</td>
+      <td>Worksheet</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of non-empty or referenced blank cells.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Spreadsheets with more calculation elements are more likely to contain a fault.</td>
+    </tr>
+
+    <!-- Metric 56 -->
+    <tr class="header" id="metric56">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">56</td>
+      <td>Number of formula cells</td>
+      <td>Worksheet</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of formula cells.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Spreadsheets with more formulas are more likely to contain a fault.</td>
+    </tr>
+
+    <!-- Metric 57 -->
+    <tr class="header" id="metric57">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">57</td>
+      <td>Columns</td>
+      <td>Worksheet</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Highest column index, starting from index 1 for column A, that contains a non-empty cell.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Spreadsheets that cover more columns usually have longer and more complex calculation chains.</td>
+    </tr>
+
+    <!-- Metric 58 -->
+    <tr class="header" id="metric58">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">58</td>
+      <td>Unique formulas</td>
+      <td>Worksheet</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of R1C1-unique formulas.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Spreadsheets with unique formulas are more likely to contain a fault.</td>
+    </tr>
+
+    <!-- Metric 59 -->
+    <tr class="header" id="metric59">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">59</td>
+      <td>Position</td>
+      <td>Worksheet</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Position of the worksheet in the spreadsheet.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Navigation between worksheets in spreadsheet UIs is cumbersome. Worksheets in later position are thus harder and less common to be validated.</td>
+    </tr>
+
+    <!-- Metric 60 -->
+    <tr class="header" id="metric60">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">60</td>
+      <td>Predecessors</td>
+      <td>Worksheet</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of cells that are referred by cells in the worksheet.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">A higher number of references means higher cognitive complexity of a worksheet as a whole.</td>
+    </tr>
+
+    <!-- Metric 61 -->
+    <tr class="header" id="metric61">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">61</td>
+      <td>Predecessors in other worksheets</td>
+      <td>Worksheet</td>
+      <td><a href="#reference9">9</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of cells in other worksheets that are referred by cells in the worksheet.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">A high number of references to other worksheets makes it harder to validate the formulas of the given worksheet.</td>
+    </tr>
+
+    <!-- Metric 62 -->
+    <tr class="header" id="metric62">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">62</td>
+      <td>Rows</td>
+      <td>Worksheet</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of rows containing the last non-empty cell of the worksheet.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">Spreadsheets that cover more rows usually have longer and more complex calculation chains.</td>
+    </tr>
+
+    <!-- Metric 63 -->
+    <tr class="header" id="metric63">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">63</td>
+      <td>Successors</td>
+      <td>Worksheet</td>
+      <td>Novel</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of cells that refer to cells of this worksheet.</td>
+    </tr>
+    <tr style="border-bottom-style: double;">
+      <th>Explanation</th>
+      <td colspan="3">The more often a worksheet is referred to, the more central it is for the functionality of a given spreadsheet. Hence, the more often it usually is considered when checking a spreadsheet, and it is thus less likely to contain a fault.</td>
+    </tr>
+
+    <!-- Metric 64 -->
+    <tr class="header" id="metric64">
+      <th align="center">No</th>
+      <th align="center">Name</th>
+      <th align="center">Calculated for</th>
+      <th align="center">Source</th>
+    </tr>
+    <tr>
+      <td align="center">64</td>
+      <td>Successors in other worksheets</td>
+      <td>Worksheet</td>
+      <td><a href="#reference9">9</a></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="3">Number of cells in other worksheets that refer to cells of this worksheet.</td>
+    </tr>
+    <tr>
+      <th>Explanation</th>
+      <td colspan="3">The more often a worksheet is referred to, the more central it is for the functionality of a given spreadsheet. Hence, the more often it usually is considered when checking a spreadsheet, and it is thus less likely to contain a fault.</td>
+    </tr>
+  </tbody>
+</table>
+</p>
+
+<h1 id="table3">Table 3: Table of references</h1>
+<p>
+<table>
+  <colgroup>
+    <col width="10%" />
+    <col width="70%" />
+    <col width="10%" />
+    <col width="10%" />
+  </colgroup>
+  <thead>
+    <tr class="header">
+      <th align="center">No</th>
+      <th align="center">Title</th>
+      <th align="center">Publisher</th>
+      <th align="center">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="reference1">
+      <td align="center">1</td>
+      <td>Complexity Metrics for Spreadsheet Models</td>
+      <td>arXiv</td>
+      <td><a href="https://arxiv.org/abs/0802.3895">link</a></td>
+    </tr>
+    <tr id="reference2">
+      <td align="center">2</td>
+      <td>Detecting Code Smells in Spreadsheet Formulas</td>
+      <td>IEEE</td>
+      <td><a href="https://dx.doi.org/10.1109/ICSM.2012.6405300">link</a></td>
+    </tr>
+    <tr id="reference3">
+      <td align="center">3</td>
+      <td>Detecting and refactoring code smells in spreadsheet formulas</td>
+      <td>Springer</td>
+      <td><a href="https://link.springer.com/article/10.1007%2Fs10664-013-9296-2">link</a></td>
+    </tr>
+    <tr id="reference4">
+      <td align="center">4</td>
+      <td>Metrics-based spreadsheet visualization: Support for forcused maintenance</td>
+      <td>arXiv</td>
+      <td><a href="https://arxiv.org/abs/0809.3009">link</a></td>
+    </tr>
+    <tr id="reference5">
+      <td align="center">5</td>
+      <td>Measuring spreadsheet formula understandability</td>
+      <td>arXiv</td>
+      <td><a href="https://arxiv.org/abs/1209.3517">link</a></td>
+    </tr>
+    <tr id="reference6">
+      <td align="center">6</td>
+      <td>A conceptual model for measuring the complexity of spreadsheets</td>
+      <td>arXiv</td>
+      <td><a href="https://arxiv.org/abs/1704.01147">link</a></td>
+    </tr>
+    <tr id="reference7">
+      <td align="center">7</td>
+      <td>Smellsheet detective: A tool for detecting bad smells in spreadsheets</td>
+      <td>IEEE</td>
+      <td><a href="https://dx.doi.org/10.1109/VLHCC.2012.6344535">link</a></td>
+    </tr>
+    <tr id="reference8">
+      <td align="center">8</td>
+      <td>Towards a catalog of spreadsheet smells</td>
+      <td>Springer</td>
+      <td><a href="https://link.springer.com/chapter/10.1007/978-3-642-31128-4_15">link</a></td>
+    </tr>
+    <tr id="reference9">
+      <td align="center">9</td>
+      <td>Detecting and visualizing inter-worksheet smells in spreadsheets</td>
+      <td>ACM</td>
+      <td><a href="https://dx.doi.org/10.1109/ICSE.2012.6227171">link</a></td>
+    </tr>
+  </tbody>
+</table>
+</p>
