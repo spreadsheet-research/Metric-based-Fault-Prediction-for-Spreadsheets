@@ -11,8 +11,26 @@ description: Most important features of Random Forest classifiers
     For this inferrence, each individual trained Decision Tree makes a succession of choices based on the value of individual features (i.e. metrics).
     The more influence a feature has on this decision process (i.e., the more often often it is used to infer a classification), the higher this feature's <b>feature importance</b> score is.
     Trained Random Forest models of the sklearn framework provide a list of quantified feature importance scores for each metric used in our evaluation.
-    We determined the most important features for each of the datasets within a 10x10 cross-valdiation scheme, and aggregated the results using average feature importance scores across all evaluations (Table 1) as well as a Borda count scheme (Table 2).
-    For comparison, we also use an evaluation that merge all data into one dataset employing the same cross-validation scheme as above (Table 3).
+    We determined the most important features for each of the datasets within a 10x10 cross-valdiation scheme, allowing a number of further analysis.
+  </p>
+  <p>
+    First, we determined a number of <a href="#rankings">feature importance rankings</a>, based on different criteria:
+    <ul>
+      <li><a href="#table1">Table 1</a> shows a top 10 ranking of the most important metrics according to the average feature importance scores per metric across all evaluations.</li>
+      <li><a href="#table2">Table 2</a> shows a top 10 ranking of the most important metrics according to an employed Borda count scheme.</li>
+      <li><a href="#table3">Table 3</a> shows a comparison top 10 ranking based on an additional evaluation where we merged all data into one dataset and employed the same cross-validation scheme as above.</li>
+    </ul>
+  </p>
+  <p>
+    Second, we used <a href="#waterfall">waterfall plots</a> to visualize for each dataset the cumulative feature importance contribution of individual metrics, ranked by each metrics' relative contributions.
+    <ul>
+      <li><a href="#waterfall1">Figure 1</a> shows the results for the Enron Errors dataset.</li>
+      <li><a href="#waterfall2">Figure 2</a> shows the results for the INFO1 dataset.</li>
+      <li><a href="#waterfall3">Figure 3</a> shows the results for the EUSES dataset.</li>
+    </ul>
+  </p>
+  <p>
+    Lastly, we compared the <a href="#metricUtilities">average metric utilities</a> of metrics of the four different metric categories (cell, formula cell, formula, worksheet) for each different dataset.
   </p>
   <p>
     Note that some metrics focus on spreadsheet features that are not used in certain datasets.
@@ -21,9 +39,9 @@ description: Most important features of Random Forest classifiers
     The Enron Errors corpus, however, does not make use of those predicates, causing the feature importance of this metric to be 0.
   </p>
 
-<h1>Result Tables</h1>
+<h1 id="rankings">Feature importance rankings</h1>
 <p>
-<table>
+<table id="table1">
   <caption>Table 1: 10 most important feature importances on average across all datasets</caption>
   <colgroup>
     <col width="10%" />
@@ -128,7 +146,7 @@ description: Most important features of Random Forest classifiers
 </table>
 </p>
 <p>
-<table>
+<table id="table2">
   <caption>Table 2: 10 most important feature importances across all datasets using Borda count</caption>
   <colgroup>
     <col width="10%" />
@@ -233,7 +251,7 @@ description: Most important features of Random Forest classifiers
 </table>
 </p>
 <p>
-<table>
+<table id="table3">
   <caption>Table 3: 10 most important feature on the merged dataset</caption>
   <colgroup>
     <col width="10%" />
@@ -337,3 +355,11 @@ description: Most important features of Random Forest classifiers
   </tbody>
 </table>
 </p>
+
+<h1 id="waterfall">Waterfall plots</h1>
+<p id="waterfall1"><img src="appendix/plots/featureImportance/waterfall_enron.png" alt="waterfall: cumulative feature importance measures for Enron Errors dataset" /></p>
+<p id="waterfall2"><img src="appendix/plots/featureImportance/waterfall_info1.png" alt="waterfall: cumulative feature importance measures for INFO1 dataset" /></p>
+<p id="waterfall3"><img src="appendix/plots/featureImportance/waterfall_euses.png" alt="waterfall: cumulative feature importance measures for EUSES dataset" /></p>
+
+<h1 id="metricUtilities">Average metric utilities</h1>
+<p><img src="appendix/plots/featureImportance/averageMetricUtility.png" alt="Average metric utility of individual metric types across all datasets" /></p>
