@@ -19,7 +19,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
-    <link rel="stylesheet" href="/assets/css/style.css?v=da056cb49ab2ac78b9f297982bae2ec40f71582a">
+    <link rel="stylesheet" href="/assets/css/style.css?v=299bc1af4f632ed81dc18eaf30cfbd7ab799309f">
     <title>Dataset combination</title>
   </head>
 
@@ -33,7 +33,7 @@
       <h1>Description</h1>
   <p>
     In addition to the studies presented in the paper we also investigated the effect of using a combinatio of datsets for training and evaluation of fault prediction classifiers.
-    In specific, we trained and evaluated Random Forest models using different combinations of our available datasets (Enron Errors, Info1, Euses).
+    In specific, we trained Random Forest models using a combination of our available datasets (Enron Errors, Info1, Euses), and evaluated the resulting predictors both using individual datasets, and using the combined dataset.
     The same gridsearch and crossvalidation approach as described for the main studies was employed for this evaluation.
   </p>
 <h1>Plot Type</h1>
@@ -44,13 +44,9 @@
     Likewise, its vertical precision corresponds to the Recall score of the evaluated model.
     Lastly, the symbol's position in relation to radial lines indicate the model's achieved F1 measure.
   </p>
-  <p>
-    We use abbreviations of the datasets in the legend (EN = Enron Errors, IN = Info1, EU = Euses).
-    Plot entries that concatenate different datasets using a "+" symbol signify the results of a model that was trained and evaluated on a combination of the named datasets.
-    E.g. "EN+IN" shows the result of the Random Forest model trained and evaluated on a combination of the "Enron Errors" and "Info1" datasets.
-  </p>
 <h1>Plot</h1>
-  <p><img src="appendix/plots/datasetCombination/comparison.png" alt="evaluation results of RF classifiers trained using combinations of the different datasets" /><a title="(Data CSV))" href="appendix/data/datasetCombination/comparison.csv">Data CSV</a></p>
+  <p><img src="appendix/plots/datasetCombination/comparison.png" alt="evaluation results of RF classifiers trained using combinations of the different datasets" /></p>
+  <p>Plot data in <a title="CSV format" href="appendix/data/datasetCombination/comparison.csv">CSV format</a></p>
 
     </section>
   </body>
