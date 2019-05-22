@@ -9,7 +9,7 @@
 <meta property="og:title" content="2018_Metric-based-Fault-Prediction-for-Spreadsheets" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal." />
-<meta property="og:description" content="Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to the “IEEE Transactions on Software Engineering” journal." />
+<meta property="og:description" content="Resources related to the paper “Metric-based Fault Prediction for Spreadsheets” submitted to “IEEE Transactions on Software Engineering”." />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Metric-based Fault Prediction for Spreadsheets" />
@@ -24,7 +24,7 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Metric-based Fault Prediction for Spreadsheets</h1>
-      <h2 class="project-tagline">Resources related to the paper "Metric-based Fault Prediction for Spreadsheets" submitted to the "IEEE Transactions on Software Engineering" journal.</h2>
+      <h2 class="project-tagline">Resources related to the paper "Metric-based Fault Prediction for Spreadsheets" submitted to "IEEE Transactions on Software Engineering".</h2>
       
         <a href="https://github.com/pwkoch/2018_Metric-based-Fault-Prediction-for-Spreadsheets" class="btn">View on GitHub</a>
       
@@ -32,17 +32,17 @@
     </section>
 
     <section class="main-content">
-      <p> Additional resources include:</p>
+      <p> Overview of the provided material:</p>
       <ul>
-        <li><a href="metricCatalog.html">Extended Metric catalog</a> presented in the paper</li>
+        <li><a href="metricCatalog.html">Catalog of metrics</a> (extended descriptions)</li>
         <li><a href="#datasets">Datasets</a> in raw and filtered forms</li>
-        <li><a href="#evaluation">Evaluation</a> framework, scripts, and results</li>
+        <li><a href="#evaluation">Evaluation code</a>, scripts, and results</li>
         <li><a href="#tool">Tool</a> download and description</li>
-        <li><a href="#appendix">Appendix</a> providing high-resoultion plots and additional information</li>
+        <li><a href="#appendix">Online appendix</a> providing detailed results of experiments and high-resoultion plots </li>
       </ul>
 
       <h1 id="datasets"> Datasets </h1>
-        <p>Spreadsheet corpora in raw form, as originally published.</p>
+        <p>Spreadsheet corpora as originally published.</p>
         <ul>
           <li><a title="ZIP file for Enron Errors dataset" href="datasets/raw/enron-errors.zip">Enron Errors</a></li>
           <li><a title="ZIP file for INFO1 dataset" href="datasets/raw/Info1.zip">INFO1</a></li>
@@ -54,33 +54,34 @@
           <li><a title="ZIP file for INFO1 dataset" href="datasets/used_for_evaluation/Info1.zip">INFO1</a></li>
           <li><a title="ZIP file for EUSES dataset" href="datasets/used_for_evaluation/EUSES_mutated.zip">EUSES</a></li>
         </ul>
-        <p>Tables that contain metric measurements and fault information.</p>
+        <p>Tables (csv files) containing the metric measurements and fault information for all spreadsheets.</p>
         <ul>
           <li><a title="CSV file for Enron Errors dataset" href="datasets/measured/enron.csv">Enron Errors</a></li>
           <li><a title="CSV file for INFO1 dataset" href="datasets/measured/info1.csv">INFO1</a></li>
           <li><a title="CSV file for EUSES dataset" href="datasets/measured/euses.csv">EUSES</a></li>
         </ul>
-      <h1 id="evaluation"> Evaluation </h1>
-        <p>The <a title="ZIP file containing the Python framework" href="evaluation/lib/lib.zip">Python framework</a> contains the basic functionality that is used by the individual evaluation scripts to import and export data, as well as initialize and employ the machine-learning functionalities of the <a title="Web page of scikit-learn framework" href="http://scikit-learn.org/">scikit-learn</a> framework.</p>
-        <p>The <a title="ZIP file containing the evaluation scripts" href="evaluation/scripts/scripts.zip">evaluation scripts</a> encode the individual experiments that were run on the evaluation server.</p>
-        <p>The <a title="ZIP file containing the evaluation results" href="evaluation/results/results.zip">evaluation results</a> contain the results of individual experiments, encoded in csv, txt, and json file formats.</p>
+      <h1 id="evaluation"> Evaluation Code</h1>
+        <p><a title="ZIP file containing the Python code" href="evaluation/lib/lib.zip">Python code</a> that implements the functionality that is used by the individual evaluation scripts to import and export data, as well as to
+        initialize and employ the machine-learning functionalities of <a title="Web page of scikit-learn framework" href="http://scikit-learn.org/">scikit-learn</a>.</p>
+        <p>The <a title="ZIP file containing the evaluation scripts" href="evaluation/scripts/scripts.zip">evaluation scripts</a> are used to run the individual experiments.</p>
+        <p>All <a title="ZIP file containing the evaluation results" href="evaluation/results/results.zip">evaluation results</a> of the individual experiments (encoded in csv, txt, and json file formats).</p>
 
-      <h1 id="tool"> Tool </h1>
-        <p><a title="Executable .jar file of Fritz evaluation tool" href="tool/fritz.jar">Fritz</a> is an executable jar file of the tool that was used to compute the metric values for each of the input datasets.
+      <h1 id="tool"> Fritz Tool </h1>
+        <p><a title="Executable .jar file of Fritz evaluation tool" href="tool/fritz.jar">Fritz</a> is the tool (in the form of an executable jar file) that was used to compute the metric values for each of the input datasets.
            Additional Information regarding the requirements, functionalities, and usage of Fritz is available at the <a title="Web page of Fritz tool" href="http://spreadsheets.ist.tugraz.at/index.php/software/fritz/">tool web page</a></p>
 
-      <h1 id="appendix"> Appendix </h1>
+      <h1 id="appendix"> Online Appendix </h1>
         <p>
-          The online appendix provides additional material, referred to within the original paper.</br>
-          It includes full-sized plots and descriptions of all results of studies 1 and 2:</p>
+          The online appendix provides additional material, referred to from the paper.</br>
+          Full-sized plots and descriptions of all results of studies 1 and 2:</p>
         <ul>
           <li><a href="study1.html">Study 1: Individual metrics as fault predictors</a></li>
           <li><a href="study2.html">Study 2: Fault prediction with multiple metrics</a></li>
         </ul>
-        <p> And adds descriptions and results of additional experiments that were not part of the main studies, but were discussed at the specified locations in the manuscript:</p>
+        <p> Descriptions and results of additional experiments that were not part of the main studies, but were discussed at the specified locations in the manuscript:</p>
         <ul>
           <li><a href="datasetCombination.html">6.4: Evaluation of combined models</a></li>
-          <li><a href="limitingFeatures.html">7.2.2: Effect of limiting features on Random Forest classifiers</a></li>
+          <li><a href="limitingFeatures.html">7.2.2: Effect of limiting the set of features for Random Forest classifiers</a></li>
           <li><a href="featureImportances.html">7.2.2: Most important features of trained Random Forest classifiers</a></li>
           <!--<li><a href="transferLearning.html">Transfer learning between datasets</a></li>-->
 
