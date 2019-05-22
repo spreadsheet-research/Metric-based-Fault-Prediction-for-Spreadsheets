@@ -8,41 +8,41 @@
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Dataset combination" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Combination of datasets for evaluation" />
-<meta property="og:description" content="Combination of datasets for evaluation" />
+<meta name="description" content="Combination of Datasets for Evaluation" />
+<meta property="og:description" content="Combination of Datasets for Evaluation" />
 <link rel="canonical" href="http://localhost:4000/datasetCombination.html" />
 <meta property="og:url" content="http://localhost:4000/datasetCombination.html" />
 <meta property="og:site_name" content="Metric-based Fault Prediction for Spreadsheets" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/datasetCombination.html","description":"Combination of datasets for evaluation","headline":"Dataset combination","@type":"WebPage","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/datasetCombination.html","description":"Combination of Datasets for Evaluation","headline":"Dataset combination","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
-    <link rel="stylesheet" href="/assets/css/style.css?v=299bc1af4f632ed81dc18eaf30cfbd7ab799309f">
+    <link rel="stylesheet" href="/assets/css/style.css?v=8caefc84ae9e84459f487788250f874c3e1a126a">
     <title>Dataset combination</title>
   </head>
 
   <body>
     <section class="page-header">
       <h1 class="project-name">Metric-based Fault Prediction for Spreadsheets</h1>
-      <h2 class="project-tagline">Combination of datasets for evaluation</h2>
+      <h2 class="project-tagline">Combination of Datasets for Evaluation</h2>
       <a href="index.html" class="btn">Back to Project Page</a>
     </section>
     <section class="main-content" style="text-align: justify">
       <h1>Description</h1>
   <p>
-    In addition to the studies presented in the paper we also investigated the effect of using a combinatio of datsets for training and evaluation of fault prediction classifiers.
-    In specific, we trained Random Forest models using a combination of our available datasets (Enron Errors, Info1, Euses), and evaluated the resulting predictors both using individual datasets, and using the combined dataset.
-    The same gridsearch and crossvalidation approach as described for the main studies was employed for this evaluation.
+    In addition to the studies presented in the paper we also investigated the effect of using a combination of datsets for training and evaluation of fault prediction classifiers.
+    Specifically, we trained Random Forest models on a dataset that was created by combining our available datasets (Enron Errors, Info1, Euses) into one, and evaluated the resulting predictors both using individual datasets, and using the combined dataset.
+    The same grid-search and cross-validation approach as described for the main studies was employed for this evaluation.
   </p>
 <h1>Plot Type</h1>
   <p>
-    To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and f1-performance for a specific evaluated model.
+    To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and F1-performance for a specific evaluated model.
     The evaluation result of each trained model is illustrated by a symbol in the plot area.
     For any given symbol in the plot, its horizontal position corresponds to the precision score of the evaluated model.
-    Likewise, its vertical precision corresponds to the Recall score of the evaluated model.
-    Lastly, the symbol's position in relation to radial lines indicate the model's achieved F1 measure.
+    Likewise, its vertical precision corresponds to the recall score of the evaluated model.
+    Lastly, the symbol's position in relation to radial lines indicate the model's achieved F1 score.
   </p>
 <h1>Plot</h1>
   <p><img src="appendix/plots/datasetCombination/comparison.png" alt="evaluation results of RF classifiers trained using combinations of the different datasets" /></p>

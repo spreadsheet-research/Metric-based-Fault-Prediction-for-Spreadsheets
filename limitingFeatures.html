@@ -1,21 +1,21 @@
 ---
 layout: appendix
 title: Limiting Features
-description: Effect of limiting features on Random Forest classifiers
+description: Effect of limiting Features for Random Forest Classifiers
 ---
 <h1>Description</h1>
   <p>
-    In Study 3, we investigate the effect of feature selection on the performance of learnd prediction models for the given classification task.
-    In addition to the results shown in the main paper, we also investigated the prediction performance of Random Forest models, when trained only with a set number of the most important features.
+    In Study 3, we investigate the effect of feature selection on the performance of the learned prediction models for the given classification task.
+    In addition to the results shown in the paper, we also investigated the prediction performance of Random Forest models, when trained only with a set number of the most important features.
     The features were selected on a per-dataset basis. I.e. the features chosen for the Enron Errors dataset are not necessarily the same as chosen for the Info1 dataset.
-    The evaluation results were obtained by the same gridsearch-optimized, 10-10 crossvalidation scheme as employed for the main results presented in the paper.
+    The evaluation results were obtained by the same grid-search optimized, 10-10 cross-validation scheme as employed for the main results presented in the paper.
   </p>
 <h1>Plot Type</h1>
   <p>
-    To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and f1-performance for a specific evaluated model.
+    To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and F1-performance for a specific evaluated model.
     The evaluation result of each trained model is illustrated by a symbol in the plot area.
     For any given symbol in the plot, its horizontal position corresponds to the precision score of the evaluated model.
-    Likewise, its vertical precision corresponds to the Recall score of the evaluated model.
+    Likewise, its vertical precision corresponds to the recall score of the evaluated model.
     Lastly, the symbol's position in relation to radial lines indicate the model's achieved F1 measure.
   </p>
   <p>
@@ -24,5 +24,5 @@ description: Effect of limiting features on Random Forest classifiers
     The bracket information provides insight as to how many of the most important features were used for training and  evaluation.
   </p>
 <h1>Plot</h1>
-  <p><img src="appendix/plots/limitedFeatures/comparision.png" alt="results of RF classifiers trained using only the 5 most important features" /></p>
+  <p><img src="appendix/plots/limitedFeatures/comparision.png" alt="Results of RF classifiers trained using only the 5 / 10 most important features" /></p>
   <p>Plot data in <a title="CSV format" href="appendix/data/limitedFeatures/comparision.csv">CSV format</a></p>

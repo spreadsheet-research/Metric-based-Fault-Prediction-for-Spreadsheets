@@ -1,12 +1,12 @@
 ---
 layout: appendix
 title: Feature importances
-description: Most important features of Random Forest classifiers
+description: Most important Features of Random Forest Classifiers
 ---
 <h1>Description</h1>
   <p>
     In Study 3, we investigate the effect of feature selection on the performance of learnd prediction models for the given classification task.
-    In addition to the results shown in the main paper, we also investigated the ranking of feature importances of the different metrics of our catalog based on trained Random Forest classifiers.
+    In addition to the results shown in the paper, we also investigated the ranking of feature importances of the different metrics of our catalog based on trained Random Forest classifiers.
     Random Forest models use a number of Decision Trees to infer predictions.
     For this inferrence, each individual trained Decision Tree makes a succession of choices based on the value of individual features (i.e. metrics).
     The more influence a feature has on this decision process (i.e., the more often often it is used to infer a classification), the higher this feature's <b>feature importance</b> score is.
@@ -16,13 +16,13 @@ description: Most important features of Random Forest classifiers
   <p>
     First, we determined a number of <a href="#rankings">feature importance rankings</a>, based on different criteria:
     <ul>
-      <li><a href="#table1">Table 1</a> shows a top 10 ranking of the most important metrics according to the average feature importance scores per metric across all evaluations.</li>
-      <li><a href="#table2">Table 2</a> shows a top 10 ranking of the most important metrics according to an employed Borda count scheme.</li>
-      <li><a href="#table3">Table 3</a> shows a comparison top 10 ranking based on an additional evaluation where we merged all data into one dataset and employed the same cross-validation scheme as above.</li>
+      <li><a href="#table1">Table 1</a> shows a top-10 ranking of the most important metrics according to the average feature importance scores per metric across all evaluations.</li>
+      <li><a href="#table2">Table 2</a> shows a top-10 ranking of the most important metrics according to a Borda count scheme.</li>
+      <li><a href="#table3">Table 3</a> shows a comparison top-10 ranking when applying the same cross-validation scheme as above on a dataset that was created by combining our available datasets (Enron Errors, Info1, Euses) into one.</li>
     </ul>
   </p>
   <p>
-    Second, we used <a href="#waterfall">waterfall plots</a> to visualize for each dataset the cumulative feature importance contribution of individual metrics, ranked by each metrics' relative contributions.
+    Second, we used <a href="#waterfall">waterfall plots</a> to visualize for each dataset the cumulative feature importance contribution of individual metrics, ranked by each metric's relative contributions.
     <ul>
       <li><a href="#waterfall1">Figure 1</a> shows the results for the Enron Errors dataset.</li>
       <li><a href="#waterfall2">Figure 2</a> shows the results for the INFO1 dataset.</li>
@@ -30,12 +30,12 @@ description: Most important features of Random Forest classifiers
     </ul>
   </p>
   <p>
-    Lastly, we compared the <a href="#metricUtilities">average metric utilities</a> of metrics of the four different metric categories (cell, formula cell, formula, worksheet) for each different dataset.
+    Lastly, we compared the <a href="#metricUtilities">average metric utilities</a> of metrics of the four different metric categories (cell, formula cell, formula, worksheet) for each dataset.
   </p>
   <p>
     Note that some metrics focus on spreadsheet features that are not used in certain datasets.
     Those metrics consequently do not contribute to any prediction and thus have a feature importance of 0.
-    For example, Metric 37, Decision count, iscounts on the number of used AND and OR predicates in formulas.
+    For example, Metric 37, <em>Decision count</em>, counts the number of AND and OR predicates in a formulas.
     The Enron Errors corpus, however, does not make use of those predicates, causing the feature importance of this metric to be 0.
   </p>
 

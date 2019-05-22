@@ -8,42 +8,41 @@
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Study 2" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Study 2 - Fault prediction with multiple metrics" />
-<meta property="og:description" content="Study 2 - Fault prediction with multiple metrics" />
+<meta name="description" content="Study 2 - Fault Prediction with Multiple Metrics" />
+<meta property="og:description" content="Study 2 - Fault Prediction with Multiple Metrics" />
 <link rel="canonical" href="http://localhost:4000/study2.html" />
 <meta property="og:url" content="http://localhost:4000/study2.html" />
 <meta property="og:site_name" content="Metric-based Fault Prediction for Spreadsheets" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/study2.html","description":"Study 2 - Fault prediction with multiple metrics","headline":"Study 2","@type":"WebPage","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/study2.html","description":"Study 2 - Fault Prediction with Multiple Metrics","headline":"Study 2","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
-    <link rel="stylesheet" href="/assets/css/style.css?v=299bc1af4f632ed81dc18eaf30cfbd7ab799309f">
+    <link rel="stylesheet" href="/assets/css/style.css?v=8caefc84ae9e84459f487788250f874c3e1a126a">
     <title>Study 2</title>
   </head>
 
   <body>
     <section class="page-header">
       <h1 class="project-name">Metric-based Fault Prediction for Spreadsheets</h1>
-      <h2 class="project-tagline">Study 2 - Fault prediction with multiple metrics</h2>
+      <h2 class="project-tagline">Study 2 - Fault Prediction with Multiple Metrics</h2>
       <a href="index.html" class="btn">Back to Project Page</a>
     </section>
     <section class="main-content" style="text-align: justify">
       <h1>Description</h1>
   <p>
     In Study 2, we evaluate the performance of metric combinations when used to train certain ensemble ML model types to predict faulty spreadsheet cells.
-    On this page, we provide additional details about the applied gridsearch-optimization in form of a table, listing the determined hyper-parameter settings.
+    On this page, we provide additional details about the hyper-parameters obtained by grid-search optimization in form of a table, listing the determined hyper-parameter settings.
     We also provide high-resulution plots that show these results for the different classifier types evaluated on each of the three datasets (Enron Errors, Info1, Euses).
-    In addition, we provide boxplots for all datasets, that give another perspective on individual learned models's performances during the cross-validation procedure.
+    In addition, we provide boxplots for all datasets that show another perspective on the performances of the individual, learned models during the cross-validation procedure.
   </p>
 
-<h1>Hyperparameter Settings</h1>
+<h1>Hyper-parameter Settings</h1>
 <p>
-
+  We optimized the hyper-parameter values for each algorithm in study 2 for each dataset using grid-search as described in the study setup.
+  The resulting best parameter values are listed in the following table.
 </p>
-We optimized the hyper-parameter values for each algorithm in study 2 for each dataset using grid search as described in the study setup.
-The resulting best parameter values are listed in the following table.
 
 <table>
   <caption>Grid search optimized hyper-parameter settings</caption>
@@ -97,14 +96,14 @@ The resulting best parameter values are listed in the following table.
 
 <h1>Plot Types</h1>
   <p>
-    To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and f1-performance for a specific evaluated model.
+    To compare model prediction performances, we employ a custom plot type, the <b>Precision / Recall / F1 plot</b>, that combines precision, recall, and F1-performance for a specific evaluated model.
     The evaluation result of each trained model is illustrated by a symbol in the plot area.
     For any given symbol in the plot, its horizontal position corresponds to the precision score of the evaluated model.
     Likewise, its vertical precision corresponds to the Recall score of the evaluated model.
-    Lastly, the symbol's position in relation to radial lines indicate the model's achieved F1 measure.
+    Lastly, the symbol's position in relation to radial lines indicate the model's achieved F1 score.
   </p>
   <p>
-    <b>Boxplots</b> provide distribution information of the f1-values measured of each individual evaluation during the cross-validation scheme for each learner.
+    The <b>Boxplots</b> provide distribution information of the F1 scores in each individual evaluation during cross-validation.
     For these plots, RF stands for Random Forest, and AB For AdaBoost.
   </p>
 
@@ -122,11 +121,11 @@ The resulting best parameter values are listed in the following table.
       <img src="appendix/plots/boxplots/boxplot_ENRON.png" alt="boxplot ENRON" />
     </p>
     <p>
-      <figcaption>Info1</figcaption>
+      <figcaption>INFO1</figcaption>
       <img src="appendix/plots/boxplots/boxplot_INFO1.png" alt="boxplot INFO1" />
     </p>
     <p>
-      <figcaption>Euses</figcaption>
+      <figcaption>EUSES</figcaption>
       <img src="appendix/plots/boxplots/boxplot_EUSES.png" alt="boxplots EUSES" />
     </p>
 
