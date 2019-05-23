@@ -1,1 +1,0 @@
-This folder contains the executable jar of Fritz, the tool that was used to compute the metric values for each of the input datasets.

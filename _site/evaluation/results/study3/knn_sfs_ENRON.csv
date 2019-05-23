@@ -1,2 +1,0 @@
-Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.
-KNeighborsClassifier;KNeighborsClassifier;ENRON;0,9725;0,0256;0,9696;0,0245

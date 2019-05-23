@@ -1,2 +1,0 @@
-Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.
-RandomForestClassifier;RandomForestClassifier;INFO1;0,74;0,01;0,81;0,02

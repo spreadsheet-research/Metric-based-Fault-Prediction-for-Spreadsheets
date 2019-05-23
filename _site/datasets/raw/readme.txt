@@ -1,1 +1,0 @@
-This folder contains the datasets in their raw form, as they were published by the datasets original authors.

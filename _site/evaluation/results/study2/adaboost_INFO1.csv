@@ -1,2 +1,0 @@
-Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.
-AdaBoostClassifier;AdaBoostClassifier;INFO1;0,73;0,02;0,73;0,02

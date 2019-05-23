@@ -1,2 +1,0 @@
-Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.
-MLPClassifier;MLPClassifier;INFO1;0,7501;0,0169;0,9872;0,0065

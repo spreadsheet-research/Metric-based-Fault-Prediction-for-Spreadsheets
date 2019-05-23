@@ -1,2 +1,0 @@
-Name;Label;Dataset;Precision Avg.;Precision Std.;Recall Avg.;Recall Std.
-MLPClassifier;MLPClassifier;EUSES;0,2740;0,0406;0,5374;0,0609

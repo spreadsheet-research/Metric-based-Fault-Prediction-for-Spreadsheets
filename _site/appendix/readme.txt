@@ -1,1 +1,0 @@
-This folder contains additional material, referred to within the original paper.
