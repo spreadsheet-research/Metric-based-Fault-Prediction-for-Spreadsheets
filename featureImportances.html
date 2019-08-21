@@ -38,6 +38,27 @@ description: Most important Features of Random Forest Classifiers
     For example, Metric 37, <em>Decision count</em>, counts the number of AND and OR predicates in a formulas.
     The Enron Errors corpus, however, does not make use of those predicates, causing the feature importance of this metric to be 0.
   </p>
+  <h1 id="discussion">Discussion</h1>
+  <p>
+    In terms of <em>metric types</em>, we observe that all types of metrics appear in the respective top-10 rankings.
+    This finding is also supported by the average metric utility evaluation per category: metrics of all types show to be relevant in all datasets.
+    This indicates a pronounced diversity of the prevalent faults, which necessitates a similar diverse set of metrics for successful categorization.
+  </p>
+    <em>Worksheet metrics</em> are noticeably common within the top-10 lists (3, 6, and 4 entries respectively), and also prove the highest utility ratings per category in all examined datasets.
+    In particular, metrics 56 (Number of formula cells), 60 (Predecessors), and 63 (Successors) are part of all three top-10 lists.
+    Worksheet metrics, as opposed to the other types, measure properties of the worksheet a given cell is located in.
+    The high importance of such metrics reinforces the observation that bigger and more complicated worksheets are more likely to contain faults.
+    Respective measures of worksheet properties thus provide a good first estimate for the likelihood of the individual cells of the worksheet being faulty.
+  </p>
+  <p>
+    <em>Novel metrics</em> were also commonly represented in the top-10 lists (6, 7, and 4 entries respectively).
+    This is a noteworthy observation, as only 26 of the 64 measures are considered novel.
+    A partial explanation of this finding is that worksheet models performed well, and most of the worksheet models are considered novel contributions.
+    However, novel measures that are not worksheet related proved to be important for the prediction task as well.
+    In general, we selected novel measures that either (1) cover basic features, (2), use established ideas, or (3) proved to be beneficial in previous research experience.
+    Novel metrics are therefore chosen to be distinctive measures of a certain property.
+    As ML models rely on destinctive measures for accurate predictions, this evaluation result indicates a successful metric selection.
+  </p>
 
 <h1 id="rankings">Feature importance rankings</h1>
 <p>
