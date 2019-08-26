@@ -30,13 +30,16 @@ description: Most important Features of Random Forest Classifiers
     </ul>
   </p>
   <p>
-    Lastly, we compared the <a href="#metricUtilities">average metric utilities</a> of metrics of the four different metric categories (cell, formula cell, formula, worksheet) for each dataset.
+    Third, we compared the <a href="#metricUtilities">average metric utilities</a> of metrics of the four different metric categories (cell, formula cell, formula, worksheet) for each dataset.
   </p>
   <p>
     Note that some metrics focus on spreadsheet features that are not used in certain datasets.
     Those metrics consequently do not contribute to any prediction and thus have a feature importance of 0.
     For example, Metric 37, <em>Decision count</em>, counts the number of AND and OR predicates in a formulas.
     The Enron Errors corpus, however, does not make use of those predicates, causing the feature importance of this metric to be 0.
+  </p>
+  <p>
+    Lastly, we calculated the <a href="#averageWorksheetMeasures">average measures for worksheet metrics</a> for the cases of (1) all worksheets, (2) faulty worksheets, and (3) correct worksheets of the Enron Errors dataset.
   </p>
   <h1 id="discussion">Discussion</h1>
   <p>
@@ -384,3 +387,6 @@ description: Most important Features of Random Forest Classifiers
 
 <h1 id="metricUtilities">Average metric utilities</h1>
 <p><img src="appendix/plots/featureImportance/averageMetricUtility.png" alt="Average metric utility of individual metric types across all datasets" /></p>
+
+<h1 id="averageWorksheetMeasures">Average measures for worksheet metrics</h1>
+<p><img src="appendix/plots/featureImportance/averageWorksheetMeasures.png" alt="Average measures of worksheet metrics for Enron Errors dataset" /></p>
