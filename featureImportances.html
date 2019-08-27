@@ -39,8 +39,11 @@ description: Most important Features of Random Forest Classifiers
     The Enron Errors corpus, however, does not make use of those predicates, causing the feature importance of this metric to be 0.
   </p>
   <p>
-    Lastly, we calculated the <a href="#averageWorksheetMeasures">average measures for worksheet metrics</a> for the cases of (1) all worksheets, (2) faulty worksheets, and (3) correct worksheets of the Enron Errors dataset.
+    Lastly, we investigated the noteworthy performances of worksheet and novel metrics along additional analysis.
+    For worksheet metrics, we calculated the <a href="#averageWorksheetMeasures">average measures for worksheet metrics</a> for the cases of (1) all worksheets, (2) faulty worksheets, and (3) correct worksheets of the Enron Errors dataset.
+    For novel metrics, we compared the <a href="#novelComparison">performance of Decision Trees</a> traind for individual common (blue) and novel (green) metrics on the various datasets.
   </p>
+
   <h1 id="discussion">Discussion</h1>
   <p>
     In terms of <b>metric types</b>, we observe that all types of metrics appear in the respective top-10 rankings.
@@ -51,7 +54,7 @@ description: Most important Features of Random Forest Classifiers
     In particular, metrics 56, <em>Number of formula cells</em>, 60, <em>Predecessors</em>, and 63, <em>Successors</em>, are part of all three top-10 lists.
     Worksheet metrics, as opposed to the other types, measure properties of the worksheet a given cell is located in.
     The high importance of such metrics reinforces the observation that bigger and more complicated worksheets are more likely to contain faults.
-    The comparison of <a href="#averageWorksheetMeasures">average measures for worksheet metrics in Enron Errors</a> supports this conjecutre, where six out of ten metrics depicted significantly higher average readings for worksheets that contain faults. 
+    The comparison of <a href="#averageWorksheetMeasures">average measures for worksheet metrics in Enron Errors</a> supports this conjecutre, where six out of ten metrics depicted significantly higher average readings for worksheets that contain faults.
     Respective measures of worksheet properties thus provide a good first estimate for the likelihood of the individual cells of the worksheet being faulty.
   </p>
   <p>
@@ -59,9 +62,10 @@ description: Most important Features of Random Forest Classifiers
     This is a noteworthy observation, as only 26 of the 64 measures are considered novel.
     A partial explanation of this finding is that worksheet models performed well, and most of the worksheet models are considered novel contributions.
     However, novel measures that are not worksheet related proved to be important for the prediction task as well.
-    In general, we selected novel measures that either (1) cover basic features, (2), use established ideas, or (3) proved to be beneficial in previous research experience.
-    Novel metrics are therefore chosen to be distinctive measures of a certain property.
-    As ML models rely on distinctive measures for accurate predictions, this evaluation result indicates a successful metric selection.
+    <!--In general, we selected novel measures that either (1) cover basic features, (2), use established ideas, or (3) proved to be beneficial in previous research experience.
+    Novel metrics are therefore chosen to be distinctive measures of a certain property.-->
+    Indeed, comparison of the <a href="#novelComparison">individual prediction performance of common and novel metrics</a> shows that most of our novel contributions outperform many of the common measures in the catalog.
+    As combined ML models rely on distinctive measures for accurate predictions, many novel metrics are assessed as more important than their competitors.
   </p>
 
 <h1 id="rankings">Feature importance rankings</h1>
@@ -391,3 +395,8 @@ description: Most important Features of Random Forest Classifiers
 
 <h1 id="averageWorksheetMeasures">Average measures for worksheet metrics</h1>
 <p><img src="appendix/plots/featureImportance/averageWorksheetMeasures.png" alt="Average measures of worksheet metrics for Enron Errors dataset" /></p>
+
+<h2 id="novelComparison">Performance of Decision Trees traind for individual common (blue) and novel (green) metrics on the various datasets</h2>
+  <p><img src="appendix/plots/featureImportance/novelVsCommon_decisionTree_ENRON.png" alt="Precision-Recall-F1 performance decision trees for common and novel metrics for Enron Errors dataset" /></p>
+  <p><img src="appendix/plots/featureImportance/novelVsCommon_decisionTree_INFO1.png" alt="Precision-Recall-F1 performance decision trees for common and novel metrics for Enron INFO1" /></p>
+  <p><img src="appendix/plots/featureImportance/novelVsCommon_decisionTree_EUSES.png" alt="Precision-Recall-F1 performance decision trees for common and novel metrics for Enron EUSES" /></p>
