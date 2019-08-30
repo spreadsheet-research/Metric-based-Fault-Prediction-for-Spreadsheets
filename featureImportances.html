@@ -6,23 +6,26 @@ description: Most important Features of Random Forest Classifiers
 <h1>Description</h1>
   <p>
     In Study 3, we investigate the effect of feature selection on the performance of learned prediction models for the given classification task.
-    In addition to the results shown in the paper, we also investigated the ranking of feature importances of the different metrics of our catalog based on trained Random Forest classifiers.
-    Random Forest models use a number of Decision Trees to infer predictions.
-    For this inferrence, each individual trained Decision Tree makes a succession of choices based on the value of individual features (i.e. metrics).
-    The more influence a feature has on this decision process (i.e., the more often often it is used to infer a classification), the higher this feature's <b>feature importance</b> score is.
-    Trained Random Forest models of the sklearn framework provide a list of quantified feature importance scores for each metric used in our evaluation.
-    We determined the most important features for each of the datasets within a 10x10 cross-valdiation scheme, allowing a number of further analysis.
+    In addition to the results shown in the paper, we determined feature importance values for the metrics of our catalog based on trained Random Forest classifiers.
   </p>
   <p>
-    First, we determined a number of <a href="#rankings">feature importance rankings</a>, based on different criteria:
+    Random Forest models use a number of Decision Trees to infer predictions.
+    For this inferrence, each individual trained Decision Tree makes a succession of choices based on the value of individual features (i.e. metrics).
+    The more influence a feature has on this decision process (i.e., the more often it is used to infer a classification), the higher is the its <b>feature importance</b> score.
+    Random Forest models trained with the <i>sklearn</i> framework provide a list of feature importance scores for each metric used in our evaluation.
+    We determined the most important features for each of the datasets within a 10x10 cross-validation scheme, and made a number of further analysis.
+  </p>
+  <p>
+    First, we determined the following <a href="#rankings">feature importance rankings</a>, based on different criteria:
     <ul>
-      <li><a href="#table1">Table 1</a> shows a top-10 ranking of the most important metrics according to the average feature importance scores per metric across all evaluations.</li>
-      <li><a href="#table2">Table 2</a> shows a top-10 ranking of the most important metrics according to a Borda count scheme.</li>
-      <li><a href="#table3">Table 3</a> shows a comparison top-10 ranking when applying the same cross-validation scheme as above on a dataset that was created by combining our available datasets (Enron Errors, Info1, Euses) into one.</li>
+      <li><a href="#table1">Table 1</a> shows the top-10 ranking of the most important metrics according to the average feature importance scores per metric across all evaluations.</li>
+      <li><a href="#table2">Table 2</a> shows the top-10 ranking of the most important metrics according to a Borda count scheme.</li>
+      <li><a href="#table3">Table 3</a> shows the top-10 ranking when applying the same cross-validation scheme as above on a dataset that was created by combining all datasets (Enron Errors, Info1, Euses) into one.</li>
     </ul>
   </p>
   <p>
-    Second, we used <a href="#waterfall">waterfall plots</a> to visualize for each dataset the cumulative feature importance contribution of individual metrics, ranked by each metric's relative contributions.
+    Second, we used <a href="#waterfall">waterfall plots</a> to visualize for each dataset the cumulative feature importance contribution of the individual metrics, ranked by each metric's relative contributions.
+    This allows conclusions about the degree to which the predictions are influenced by a set of individual measures.
     <ul>
       <li><a href="#waterfall1">Figure 1</a> shows the results for the Enron Errors dataset.</li>
       <li><a href="#waterfall2">Figure 2</a> shows the results for the INFO1 dataset.</li>
@@ -30,18 +33,20 @@ description: Most important Features of Random Forest Classifiers
     </ul>
   </p>
   <p>
-    Third, we compared the <a href="#metricUtilities">average metric utilities</a> of metrics of the four different metric categories (cell, formula cell, formula, worksheet) for each dataset.
+    Third, we compared the <a href="#metricUtilities">average metric utilities</a> of the metrics of the four different categories (cell, formula cell, formula, worksheet) for each dataset.
   </p>
   <p>
     Note that some metrics focus on spreadsheet features that are not used in certain datasets.
     Those metrics consequently do not contribute to any prediction and thus have a feature importance of 0.
-    For example, Metric 37, <em>Decision count</em>, counts the number of AND and OR predicates in a formulas.
-    The Enron Errors corpus, however, does not make use of those predicates, causing the feature importance of this metric to be 0.
+    For example, Metric 37, <em>Decision count</em>, counts the number of AND and OR predicates in a formula.
+    In the Enron Errors corpus, however, such predicates are not used, causing the feature importance of this metric to be 0.
   </p>
   <p>
-    Lastly, we investigated the noteworthy performances of worksheet and novel metrics along additional analyses.
-    For worksheet metrics, we calculated the <a href="#averageWorksheetMeasures">average measures for worksheet metrics</a> for the cases of (1) all worksheets, (2) faulty worksheets, and (3) correct worksheets of the Enron Errors dataset.
-    For novel metrics, we compared the <a href="#novelComparison">performance of Decision Trees</a> trained for individual common (blue) and novel (green) metrics on the various datasets.
+    Lastly, we investigated the performance of worksheet metrics and the novel metrics proposed in our present work through additional analyses.
+    For the worksheet metrics, we calculated the <a href="#averageWorksheetMeasures">average measured values for worksheet metrics</a> for the cases of (1) all worksheets, (2) faulty worksheets, and (3) correct worksheets of the Enron Errors dataset.
+    This allows conclusions as to whether higher measurements of worksheet metrics are linked to a higher fault probability.
+    For the novel metrics, we compared the <a href="#novelComparison">prediction performance of existing (blue) and novel (green) metrics</a> as observed in <a href="study1.html">Study 1</a>, when used to train individual Decision Trees on the various datasets.
+    The resulting illustrations provide visual feedback about the comparative distinctiveness of novel metrics, which is indicative of the observed high importance scores.
   </p>
 
   <h1 id="discussion">Discussion</h1>
@@ -50,22 +55,24 @@ description: Most important Features of Random Forest Classifiers
     This finding is also supported by the average metric utility evaluation per category: metrics of all types show to be relevant in all datasets.
     This indicates a pronounced diversity of the prevalent faults, which necessitates a similar diverse set of metrics for successful categorization.
   </p>
-    <b>Worksheet metrics</b> are noticeably common within the top-10 lists (3, 6, and 4 entries respectively), and also prove the highest utility ratings per category in all examined datasets.
+  <p>
+    <b>Worksheet metrics</b> are common within the top-10 lists (3, 6, and 4 entries respectively), and also prove the highest utility ratings per category in all examined datasets.
     In particular, metrics 56, <em>Number of formula cells</em>, 60, <em>Predecessors</em>, and 63, <em>Successors</em>, are part of all three top-10 lists.
     Worksheet metrics, as opposed to the other types, measure properties of the worksheet a given cell is located in.
     The high importance of such metrics reinforces the observation that bigger and more complicated worksheets are more likely to contain faults.
-    The comparison of <a href="#averageWorksheetMeasures">average measures for worksheet metrics in Enron Errors</a> supports this conjecutre, where six out of ten metrics depicted significantly higher average readings for worksheets that contain faults.
-    Respective measures of worksheet properties thus provide a good first estimate for the likelihood of the individual cells of the worksheet being faulty.
+    The comparison of <a href="#averageWorksheetMeasures">average measured values for the worksheet metrics in Enron Errors</a> supports this conjecture, where six of ten metrics led to significantly higher average readings for worksheets that contain faults.
+    The measures of worksheet properties thus provide a good first estimate for the likelihood of the individual cells of the worksheet being faulty.
   </p>
   <p>
-    <b>Novel metrics</b> were also commonly represented in the top-10 lists (6, 7, and 4 entries respectively).
-    This is a noteworthy observation, as only 26 of the 64 measures are considered novel.
-    A partial explanation of this finding is that worksheet models performed well, and most of the worksheet models are considered novel contributions.
+    The <b>novel metrics</b> proposed in this paper were also commonly represented in the top-10 lists (6, 7, and 4 entries respectively).
+    This is an important observation, as only 26 of the 64 measures are considered novel.
+    A partial explanation of this finding is that worksheet models performed well, and most of the worksheet models were novel contributions.
     However, novel measures that are not worksheet related proved to be important for the prediction task as well.
     <!--In general, we selected novel measures that either (1) cover basic features, (2), use established ideas, or (3) proved to be beneficial in previous research experience.
     Novel metrics are therefore chosen to be distinctive measures of a certain property.-->
-    Indeed, comparison of the <a href="#novelComparison">individual prediction performance of common and novel metrics</a> shows that most of our novel contributions outperform many of the common measures in the catalog.
-    As combined ML models rely on distinctive measures for accurate predictions, many novel metrics are assessed as more important than their competitors.
+    Indeed, comparison of the <a href="#novelComparison">individual prediction performance of existing and novel metrics</a> shows that most of our novel metrics are more predictive than many of the existing metrics in the catalog.
+    The ensemble ML models we investigated in <a href="study2.html">Study 2</a> use a combination of metrics, and thus rely the distinctiveness of the individual metrics for accurate predictions.
+    Hence, when used in combination, many novel metrics turn out to be more important than the existing metrics.
   </p>
 
 <h1 id="rankings">Feature importance rankings</h1>
@@ -393,10 +400,10 @@ description: Most important Features of Random Forest Classifiers
 <h1 id="metricUtilities">Average metric utilities</h1>
 <p><img src="appendix/plots/featureImportance/averageMetricUtility.png" alt="Average metric utility of individual metric types across all datasets" /></p>
 
-<h1 id="averageWorksheetMeasures">Average measures for worksheet metrics</h1>
+<h1 id="averageWorksheetMeasures">Average measured values for worksheet metrics</h1>
 <p><img src="appendix/plots/featureImportance/averageWorksheetMeasures.png" alt="Average measures of worksheet metrics for Enron Errors dataset" /></p>
 
-<h2 id="novelComparison">Performance of Decision Trees trained for individual common (blue) and novel (green) metrics on the various datasets</h2>
+<h2 id="novelComparison">Performance of Decision Trees trained for individual existing (blue) and novel (green) metrics on the various datasets</h2>
   <p><img src="appendix/plots/featureImportance/novelVsCommon_decisionTree_ENRON.png" alt="Precision-Recall-F1 performance decision trees for common and novel metrics for Enron Errors dataset" /></p>
   <p><img src="appendix/plots/featureImportance/novelVsCommon_decisionTree_INFO1.png" alt="Precision-Recall-F1 performance decision trees for common and novel metrics for Enron INFO1" /></p>
   <p><img src="appendix/plots/featureImportance/novelVsCommon_decisionTree_EUSES.png" alt="Precision-Recall-F1 performance decision trees for common and novel metrics for Enron EUSES" /></p>
