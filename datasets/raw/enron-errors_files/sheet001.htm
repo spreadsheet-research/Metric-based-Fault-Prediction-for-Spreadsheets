@@ -1,0 +1,2374 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../enron-errors.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\,";
+	mso-displayed-thousand-separator:"\.";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../enron-errors.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=blue vlink=purple>
+
+<table border=0 cellpadding=0 cellspacing=0 width=1975 style='border-collapse:
+ collapse;table-layout:fixed;width:1483pt'>
+ <col width=71 style='mso-width-source:userset;mso-width-alt:2596;width:53pt'>
+ <col width=118 style='mso-width-source:userset;mso-width-alt:4315;width:89pt'>
+ <col width=305 style='mso-width-source:userset;mso-width-alt:11154;width:229pt'>
+ <col width=159 style='mso-width-source:userset;mso-width-alt:5814;width:119pt'>
+ <col width=173 style='mso-width-source:userset;mso-width-alt:6326;width:130pt'>
+ <col width=307 style='mso-width-source:userset;mso-width-alt:11227;width:230pt'>
+ <col width=180 style='mso-width-source:userset;mso-width-alt:6582;width:135pt'>
+ <col width=173 style='mso-width-source:userset;mso-width-alt:6326;width:130pt'>
+ <col width=85 style='mso-width-source:userset;mso-width-alt:3108;width:64pt'>
+ <col width=77 style='mso-width-source:userset;mso-width-alt:2816;width:58pt'>
+ <col width=78 style='mso-width-source:userset;mso-width-alt:2852;width:59pt'>
+ <col width=76 style='mso-width-source:userset;mso-width-alt:2779;width:57pt'>
+ <col width=173 style='mso-width-source:userset;mso-width-alt:6326;width:130pt'>
+ <tr height=30 style='height:22.5pt'>
+  <td height=30 class=xl67 colspan=3 width=494 style='height:22.5pt;mso-ignore:
+  colspan;width:371pt'>The Enron Errors Corpus - 2016-03-15</td>
+  <td width=159 style='width:119pt'></td>
+  <td width=173 style='width:130pt'></td>
+  <td width=307 style='width:230pt'></td>
+  <td width=180 style='width:135pt'></td>
+  <td width=173 style='width:130pt'></td>
+  <td width=85 style='width:64pt'></td>
+  <td width=77 style='width:58pt'></td>
+  <td width=78 style='width:59pt'></td>
+  <td width=76 style='width:57pt'></td>
+  <td width=173 style='width:130pt'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=3 style='height:15.0pt;mso-ignore:colspan'>Thomas
+  Schmitz and Dietmar Jannach</td>
+  <td colspan=10 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl68 colspan=2 style='height:15.0pt;mso-ignore:colspan'><a
+  href="https://spreadsheet-research.github.io/Metric-based-Fault-Prediction-for-Spreadsheets/datasets/raw/enron-errors.zip"
+  target="_parent">Download the corpus</a></td>
+  <td class=xl68><a
+  href="https://spreadsheet-research.github.io/Metric-based-Fault-Prediction-for-Spreadsheets/datasets/raw/enron-errors.xlsx"
+  target="_parent">Download the overview file</a></td>
+  <td colspan=10 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 colspan=13 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 style='height:15.0pt;font-size:11.0pt;color:white;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:none;
+  border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;background:
+  #4F81BD;mso-pattern:#4F81BD none'>Error Nr</td>
+  <td class=xl69 style='font-size:11.0pt;color:white;font-weight:700;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#4F81BD;
+  mso-pattern:#4F81BD none'>Spreadsheet Nr</td>
+  <td style='font-size:11.0pt;color:white;font-weight:700;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#4F81BD;mso-pattern:#4F81BD none'>Faulty
+  Spreadsheet</td>
+  <td style='font-size:11.0pt;color:white;font-weight:700;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#4F81BD;mso-pattern:#4F81BD none'>Faulty
+  worksheet</td>
+  <td class=xl69 style='font-size:11.0pt;color:white;font-weight:700;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#4F81BD;
+  mso-pattern:#4F81BD none'>Faulty cells</td>
+  <td style='font-size:11.0pt;color:white;font-weight:700;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#4F81BD;mso-pattern:#4F81BD none'>Corrected
+  Spreadsheet</td>
+  <td style='font-size:11.0pt;color:white;font-weight:700;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#4F81BD;mso-pattern:#4F81BD none'>Corrected
+  worksheet</td>
+  <td class=xl69 style='font-size:11.0pt;color:white;font-weight:700;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#4F81BD;
+  mso-pattern:#4F81BD none'>Corrected cells</td>
+  <td style='font-size:11.0pt;color:white;font-weight:700;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#4F81BD;mso-pattern:#4F81BD none'>Type</td>
+  <td style='font-size:11.0pt;color:white;font-weight:700;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#4F81BD;mso-pattern:#4F81BD none'>Subtype</td>
+  <td style='font-size:11.0pt;color:white;font-weight:700;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#4F81BD;mso-pattern:#4F81BD none'>Cell type</td>
+  <td style='font-size:11.0pt;color:white;font-weight:700;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#4F81BD;mso-pattern:#4F81BD none'>Change</td>
+  <td class=xl69 style='font-size:11.0pt;color:white;font-weight:700;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#4F81BD;
+  mso-pattern:#4F81BD none'>Additional information</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>1</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>1</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_HPLN0601.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>F28:G28</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_HPLN0531.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>F28:G28</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Inserted</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>2</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>2</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_Southpoint Gas Model.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>I34</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_Southpoint Gas Model.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>I34</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>3</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>3</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1-BMSPT051.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>BMSPT066</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>W43</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2-BMSPT051.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>BMSPT066</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>W43</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>4</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>3</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1-BMSPT051.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>BMSPT066</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>C43:V43</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'></td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>&nbsp;</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Unchanged</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>5</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>4</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_Tricia
+  Roome.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>L16</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_Tricia
+  Roome.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>L16</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>6</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>5</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_July01invoice rev1.xls</td>
+  <td class=xl65 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:none;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>jul01</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>AL44</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_July01invoice rev1.xls</td>
+  <td class=xl65 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:none;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>July 01</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>AL44</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>7</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>6</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_Plan -
+  Real-Time Trading.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Real Time</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>V23</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_Plan -
+  Real-Time Trading.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Real Time</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>V23</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Logical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>8</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>7</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_5_14act.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Deals</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>AD142</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_5_14act.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Deals</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>AD142</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Logical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>9</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>8</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_Sun Devil
+  Project Request.XLS</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Cost Estimate
+  Summary</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>L23</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_Sun Devil
+  Project Request.XLS</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Cost Estimate
+  Summary</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>L23</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>10</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>9</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_ONEOKRECAP2001.xls</td>
+  <td class=xl65 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:none;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>OCT 01</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>T39</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_ONEOKRECAP2001.xls</td>
+  <td class=xl65 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:none;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>OCT 01</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>T39</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Wrong formula</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>11</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>10</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_SunDevil01CostSummary.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>EPSunDevil</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>F10</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_SunDevil01CostSummary.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>EPSunDevil</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>F10</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Wrong reference</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>12</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>11</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_Citrus Pass-Through 12.01.00.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Data</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>D13</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_Citrus Pass-Through 12.01.00.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Data</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>D13</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Logical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Wrong calculation</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>13</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>12</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_Huber -
+  Existing &amp; Proposed Deals 111201.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Curves</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>V5:V341</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_Huber -
+  Existing &amp; Proposed Deals 111201.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Curves</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>AA5:AA341</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Omission</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Wrong calculation</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>14</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>13</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_Agro Case Question 3--Jeff.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>H33</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_Agro Case Question 3--Jeff revised.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>H33</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Logical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Wrong calculation</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>15</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>13</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_Agro Case
+  Question 3--Jeff.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>I35</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_Agro Case
+  Question 3--Jeff revised.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>I35</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Logical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Wrong calculation</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>16</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>13</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_Agro Case Question 3--Jeff.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>I38</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_Agro Case Question 3--Jeff revised.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>I43</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Omission</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Wrong calculation</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>17</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>14</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_Book Request
+  Form Central 010702.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>B30:C35; B42:C47</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_Book Request
+  Form Central010702Revised.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>B30:C35; B42:C47</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Qualitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Label</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Wrong labels</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>18</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>15</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_EES April Dailies.xls</td>
+  <td class=xl65 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:none;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>4-16, 4-15</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>K8:K31</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_EES April Dailies.xls</td>
+  <td class=xl65 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:none;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>4-16, 4-15</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>K8:K31</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Value</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Wrong values</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>19</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>16</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_PSEG - Enron
+  Bankruptcy Revised.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>B13:O13; B25:O25; B37:O37</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'></td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>&nbsp;</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Omission</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Unchanged</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Wrong calculation</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>20</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>16</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_PSEG - Enron Bankruptcy Revised.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>H17:N17; H29:N29; H41:N41</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'></td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>&nbsp;</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Omission</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Value</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Unchanged</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Wrong values</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>21</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>17</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'></td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>&nbsp;</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_Breakout
+  Contracts.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Contract
+  Payment Summary</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>F6</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Logical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Wrong calculation</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>22</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>18</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_CrackSpreadOptions.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Crack Spread Option</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>M9:M14</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_CrackSpreadOptions.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Crack Spread Option</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>M9:M14</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Logical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Wrong calculation</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>23</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>19</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_EPE_MAY_2002.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>MAY(2)</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>AE18:AE41</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_EPE_MAY_2002.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>MAY(2)</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>AE18:AE41</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>24</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>20</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_oct2301.XLS</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>D112</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_oct2301.XLS</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>D112</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Qualitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>25</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>21</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_SoCalIntCalc.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1 (2)</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>F94</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_SoCalIntCalc.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1 (2)</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>F94</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Logical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Wrong calculation</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>26</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>22</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_ENA-Cal Dec Liq.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>C7</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_ENA-Cal Dec Liq.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>C7</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Qualitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>File reference not working</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>27</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>23</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_enron corp
+  infomation request - Nov 2001.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>EGS EXP</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>W12</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_enron corp
+  infomation request-egas.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>EGS EXP</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>W12</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>28</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>24</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_CA rate exposure final 8-28 rev.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>New</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>C10:E14; H10:J14; M10:O14;
+  <span style='display:none'>C25:E29; etc.</span></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_CA rate exposure final 8-28 rev1.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>New</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>C10:E14; H10:J14; M10:O14;
+  <span style='display:none'>C25:E29; etc.</span></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Omission</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Wrong calculation</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>29</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>25</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_Ogleth200103.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>external</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>D11:D35</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_Ogleth200105.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>external</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>D11:D35</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Logical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Wrong calculation</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>30</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>25</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_Ogleth200103.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>external</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>E36:E37</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_Ogleth200105.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>external</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>E36:E37</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Qualitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Wrong reference</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>31</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>26</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_yr 2001
+  Commissioning Summary 2-26-02.xls</td>
+  <td class=xl65 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:none;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Mar 2002</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>I132</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_yr 2001
+  Commissioning Summary 2-26-02.xls</td>
+  <td class=xl65 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:none;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Mar 2002</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>I132</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Qualitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Inserted</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Fixed Value</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>32</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>27</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_ENA_PGE_JUNE_1_2002.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>JD-MAL OR CPTJK TRANS</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>H12:H17; H34:H35</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_ENA_PGE_JUNE_3_2002.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>JD-MAL OR CPTJK TRANS</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>H11:H16; H33:H34</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Qualitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>33</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>28</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_Southpoint
+  Gas Model.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>I25:I31</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>2_Southpoint
+  Gas Model.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>I25:I31</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Wrong reference</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>34</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>28</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_Southpoint Gas Model.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>G33; I34</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'></td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>&nbsp;</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Qualitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Unchanged</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Range error</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD;
+  background:#DCE6F1;mso-pattern:#DCE6F1 none'>35</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>29</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>1_EI365reveff060800.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Sheet1</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>F8</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'></td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>&nbsp;</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Qualitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Unchanged</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>Formula: = SUM(D8*E8)</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 align=right style='height:15.0pt;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #95B3D7;
+  border-right:none;border-bottom:.5pt solid #95B3D7;border-left:.5pt solid #4F81BD'>36</td>
+  <td class=xl69 align=right style='font-size:11.0pt;color:black;font-weight:
+  400;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>30</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>1_Global Hot List 1207.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Hotlist - Identified<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>M22; M37</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>2_Global Hot List 0111.xls</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Hotlist - Identified<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>I22; I37</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Quantitative</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Mechanical</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Formula</td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:none'>Fixed</td>
+  <td class=xl69 style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid #4F81BD;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>Range error</td>
+ </tr>
+ <tr height=40 style='height:30.0pt;mso-xlrowspan:2'>
+  <td height=40 colspan=13 style='height:30.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=7 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td class=xl66 style='font-size:11.0pt;color:white;font-weight:700;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid windowtext;border-right:none;
+  border-bottom:.5pt solid windowtext;border-left:.5pt solid windowtext;
+  background:#4F81BD;mso-pattern:#4F81BD none'>Statistics</td>
+  <td class=xl66 style='font-size:11.0pt;color:white;font-weight:700;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  border-bottom:.5pt solid windowtext;border-left:none;background:#4F81BD;
+  mso-pattern:#4F81BD none'><span style='mso-spacerun:yes'> </span></td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=7 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:.5pt solid windowtext;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Nb
+  of errors:</td>
+  <td align=right style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid windowtext;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>36</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=7 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:.5pt solid windowtext'>Nb of quantitative errors:</td>
+  <td align=right style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid windowtext;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>28</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=7 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:.5pt solid windowtext;background:#DCE6F1;mso-pattern:#DCE6F1 none'><span
+  style='mso-spacerun:yes'>     </span>Mechanical errors:</td>
+  <td align=right style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid windowtext;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>14</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=7 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:.5pt solid windowtext'><span style='mso-spacerun:yes'>    
+  </span>Logical errors:</td>
+  <td align=right style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid windowtext;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>9</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=7 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:.5pt solid windowtext;background:#DCE6F1;mso-pattern:#DCE6F1 none'><span
+  style='mso-spacerun:yes'>     </span>Omission errors:</td>
+  <td align=right style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid windowtext;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>5</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=7 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:.5pt solid windowtext'>Nb of qualitative errors:</td>
+  <td align=right style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid windowtext;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>8</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=7 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:.5pt solid windowtext;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Nb
+  of formula errors:</td>
+  <td align=right style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid windowtext;
+  border-bottom:.5pt solid #95B3D7;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>33</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=7 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid #95B3D7;
+  border-left:.5pt solid windowtext'>Nb of fixed errors:</td>
+  <td align=right style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid windowtext;
+  border-bottom:.5pt solid #95B3D7;border-left:none'>29</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=7 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td style='font-size:11.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #95B3D7;border-right:none;border-bottom:.5pt solid windowtext;
+  border-left:.5pt solid windowtext;background:#DCE6F1;mso-pattern:#DCE6F1 none'>Nb
+  of inserted errors:</td>
+  <td align=right style='font-size:11.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #95B3D7;border-right:.5pt solid windowtext;
+  border-bottom:.5pt solid windowtext;border-left:none;background:#DCE6F1;
+  mso-pattern:#DCE6F1 none'>2</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=71 style='width:53pt'></td>
+  <td width=118 style='width:89pt'></td>
+  <td width=305 style='width:229pt'></td>
+  <td width=159 style='width:119pt'></td>
+  <td width=173 style='width:130pt'></td>
+  <td width=307 style='width:230pt'></td>
+  <td width=180 style='width:135pt'></td>
+  <td width=173 style='width:130pt'></td>
+  <td width=85 style='width:64pt'></td>
+  <td width=77 style='width:58pt'></td>
+  <td width=78 style='width:59pt'></td>
+  <td width=76 style='width:57pt'></td>
+  <td width=173 style='width:130pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
